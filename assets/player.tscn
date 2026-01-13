@@ -228,12 +228,14 @@ radius = 4.0
 height = 10.0
 
 [node name="player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_3mip4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="shadow" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 12)
 texture = ExtResource("2_insbl")
@@ -241,7 +243,7 @@ texture = ExtResource("2_insbl")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pobfa")
-animation = &"back_walk"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

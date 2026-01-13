@@ -15,6 +15,10 @@ run/main_scene="uid://b676xmxuyfpsu"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
@@ -53,5 +57,6 @@ build={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.301961, 0.396078, 0.705882, 1)

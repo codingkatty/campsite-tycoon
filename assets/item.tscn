@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkq47f6uio7k5"]
+
+[ext_resource type="Texture2D" uid="uid://c0frglep70tfl" path="res://assets/gui/itembox.png" id="1_l4kt4"]
+
+[node name="item" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 20.0
+offset_bottom = 28.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 19.0
+texture = ExtResource("1_l4kt4")
