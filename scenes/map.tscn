@@ -1,13 +1,15 @@
-[gd_scene load_steps=42 format=3 uid="uid://b676xmxuyfpsu"]
+[gd_scene load_steps=69 format=3 uid="uid://b676xmxuyfpsu"]
 
 [ext_resource type="Texture2D" uid="uid://chis0yc4wreei" path="res://assets/tilemap/island.png" id="1_4xfga"]
 [ext_resource type="Script" uid="uid://lhijiaky7elp" path="res://scripts/player.gd" id="2_2lpho"]
 [ext_resource type="Script" uid="uid://bpvr5mbog2awb" path="res://scripts/build_cursor.gd" id="3_gldc4"]
 [ext_resource type="Texture2D" uid="uid://b7a72lwcnhjom" path="res://assets/player/shadow.png" id="3_nakos"]
 [ext_resource type="Texture2D" uid="uid://c180pxkn1w3gt" path="res://assets/gui/box.png" id="4_0cso3"]
+[ext_resource type="Script" uid="uid://c03jvo85rqmmk" path="res://scripts/build_gui.gd" id="4_blm8a"]
 [ext_resource type="Texture2D" uid="uid://b6i8faf64behm" path="res://assets/player/player.png" id="4_jh32y"]
+[ext_resource type="FontFile" uid="uid://cla4bxvj7ex5x" path="res://assets/gui/edit-undo.brk.ttf" id="5_be0no"]
 [ext_resource type="Theme" uid="uid://b32ioaa2prmvr" path="res://assets/theme.tres" id="5_jh32y"]
-[ext_resource type="PackedScene" uid="uid://dkq47f6uio7k5" path="res://assets/item.tscn" id="5_nakos"]
+[ext_resource type="Script" uid="uid://rj73wr4kiy0q" path="res://scripts/itemdata.gd" id="5_mlgqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rug40"]
 atlas = ExtResource("4_jh32y")
@@ -231,6 +233,162 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_674bt"]
 radius = 4.0
 height = 10.0
+
+[sub_resource type="Resource" id="Resource_wslke"]
+script = ExtResource("5_mlgqr")
+name = "basic tent"
+item_type = "tent"
+price = 20
+size = "2t_h"
+atlas_x = 60
+item_tile = Vector2i(14, 5)
+is_terrain = false
+terrain_set = -1
+terrain = -1
+metadata/_custom_type_script = "uid://rj73wr4kiy0q"
+
+[sub_resource type="Resource" id="Resource_blm8a"]
+script = ExtResource("5_mlgqr")
+name = "basic tent"
+item_type = "tent"
+price = 20
+size = "2t_h"
+atlas_x = 80
+item_tile = Vector2i(16, 5)
+is_terrain = false
+terrain_set = -1
+terrain = -1
+metadata/_custom_type_script = "uid://rj73wr4kiy0q"
+
+[sub_resource type="Resource" id="Resource_mlgqr"]
+script = ExtResource("5_mlgqr")
+name = "basic tent"
+item_type = "tent"
+price = 20
+size = "2t_h"
+atlas_x = 100
+item_tile = Vector2i(14, 7)
+is_terrain = false
+terrain_set = -1
+terrain = -1
+metadata/_custom_type_script = "uid://rj73wr4kiy0q"
+
+[sub_resource type="Resource" id="Resource_gw3fx"]
+script = ExtResource("5_mlgqr")
+name = "path"
+item_type = "terrain"
+price = 0
+size = "1t"
+atlas_x = 60
+item_tile = Vector2i(-1, -1)
+is_terrain = true
+terrain_set = 0
+terrain = 1
+metadata/_custom_type_script = "uid://rj73wr4kiy0q"
+
+[sub_resource type="Resource" id="Resource_n1psn"]
+script = ExtResource("5_mlgqr")
+name = "basic tent"
+item_type = "tent"
+price = 20
+size = "2t_h"
+atlas_x = 120
+item_tile = Vector2i(16, 7)
+is_terrain = false
+terrain_set = -1
+terrain = -1
+metadata/_custom_type_script = "uid://rj73wr4kiy0q"
+
+[sub_resource type="Theme" id="Theme_blm8a"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/fonts/normal_font = ExtResource("5_be0no")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_blm8a"]
+allow_unpress = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gw3fx"]
+load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1psn"]
+atlas = SubResource("CompressedTexture2D_gw3fx")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c00ee"]
+texture = SubResource("AtlasTexture_n1psn")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mlgqr"]
+load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wslke"]
+atlas = SubResource("CompressedTexture2D_mlgqr")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw3fx"]
+texture = SubResource("AtlasTexture_wslke")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_blm8a"]
+load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blm8a"]
+atlas = SubResource("CompressedTexture2D_blm8a")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wslke"]
+texture = SubResource("AtlasTexture_blm8a")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n1psn"]
+load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c00ee"]
+atlas = SubResource("CompressedTexture2D_n1psn")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7tei"]
+texture = SubResource("AtlasTexture_c00ee")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wslke"]
+load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw3fx"]
+atlas = SubResource("CompressedTexture2D_wslke")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1psn"]
+texture = SubResource("AtlasTexture_gw3fx")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c00ee"]
+load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7tei"]
+atlas = SubResource("CompressedTexture2D_c00ee")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c70he"]
+texture = SubResource("AtlasTexture_p7tei")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
 texture = ExtResource("1_4xfga")
@@ -1212,7 +1370,19 @@ texture = ExtResource("1_4xfga")
 14:5/size_in_atlas = Vector2i(2, 2)
 14:5/0 = 0
 14:5/0/texture_origin = Vector2i(-8, 8)
-14:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -11, 22, -11, 23, 3, -7, 3)
+14:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -9, 22, -9, 23, 3, -7, 3)
+16:5/size_in_atlas = Vector2i(2, 2)
+16:5/0 = 0
+16:5/0/texture_origin = Vector2i(-8, 8)
+16:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -9, 22, -9, 23, 3, -7, 3)
+14:7/size_in_atlas = Vector2i(2, 2)
+14:7/0 = 0
+14:7/0/texture_origin = Vector2i(-8, 8)
+14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -9, 22, -9, 23, 3, -7, 3)
+16:7/size_in_atlas = Vector2i(2, 2)
+16:7/0 = 0
+16:7/0/texture_origin = Vector2i(-8, 8)
+16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -9, 22, -9, 23, 3, -7, 3)
 
 [sub_resource type="TileSet" id="TileSet_gldc4"]
 physics_layer_0/collision_layer = 1
@@ -1263,8 +1433,10 @@ z_index = 1000
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
+script = ExtResource("4_blm8a")
+item_data = Array[ExtResource("5_mlgqr")]([SubResource("Resource_wslke"), SubResource("Resource_blm8a"), SubResource("Resource_mlgqr"), SubResource("Resource_gw3fx"), SubResource("Resource_n1psn")])
 
-[node name="NinePatchRect" type="NinePatchRect" parent="map/player/build-gui"]
+[node name="build-catalog-container" type="NinePatchRect" parent="map/player/build-gui"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 12
@@ -1277,6 +1449,7 @@ offset_right = 143.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 0
 texture = ExtResource("4_0cso3")
 region_rect = Rect2(0, 0, 16, 16)
 patch_margin_left = 4
@@ -1284,56 +1457,98 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
+[node name="coin-container" type="NinePatchRect" parent="map/player/build-gui"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -80.0
+offset_right = -85.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_0cso3")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="coin" type="RichTextLabel" parent="map/player/build-gui/coin-container"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 61.0
+offset_bottom = 22.0
+theme = SubResource("Theme_blm8a")
+text = "2.3k"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="map/player/build-gui"]
 layout_mode = 0
 offset_left = -137.0
 offset_top = 39.0
 offset_right = 138.0
 offset_bottom = 75.0
+mouse_filter = 2
 theme = ExtResource("5_jh32y")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="map/player/build-gui/ScrollContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 25
 
-[node name="item" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
+[node name="tent" type="Button" parent="map/player/build-gui"]
+layout_mode = 0
+offset_left = -143.0
+offset_top = 14.0
+offset_right = -105.0
+offset_bottom = 32.0
+theme = ExtResource("5_jh32y")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_blm8a")
+text = "tent"
 
-[node name="item2" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
+[node name="terrain" type="Button" parent="map/player/build-gui"]
+layout_mode = 0
+offset_left = -105.0
+offset_top = 14.0
+offset_right = -54.0
+offset_bottom = 32.0
+theme = ExtResource("5_jh32y")
+theme_override_colors/font_hover_pressed_color = Color(0.0431373, 0.541176, 0.560784, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.737255, 0.45098, 1)
+theme_override_colors/font_focus_color = Color(0.0257235, 0.410932, 0.426227, 1)
+theme_override_colors/font_pressed_color = Color(0.0257235, 0.410932, 0.426227, 1)
+theme_override_styles/focus = SubResource("StyleBoxTexture_c00ee")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gw3fx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c00ee")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wslke")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_blm8a")
+text = "terrain"
 
-[node name="item3" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item4" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item5" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item6" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item7" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item8" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item9" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item10" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item11" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item12" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
-
-[node name="item13" parent="map/player/build-gui/ScrollContainer/HBoxContainer" instance=ExtResource("5_nakos")]
-layout_mode = 2
+[node name="others" type="Button" parent="map/player/build-gui"]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 14.0
+offset_right = -5.0
+offset_bottom = 32.0
+theme = ExtResource("5_jh32y")
+theme_override_colors/font_hover_pressed_color = Color(0.564706, 0.368627, 0.662745, 1)
+theme_override_colors/font_hover_color = Color(0.658824, 0.517647, 0.952941, 1)
+theme_override_colors/font_focus_color = Color(0.323831, 0.190172, 0.38946, 1)
+theme_override_colors/font_pressed_color = Color(0.323831, 0.190172, 0.38946, 1)
+theme_override_styles/focus = SubResource("StyleBoxTexture_p7tei")
+theme_override_styles/hover = SubResource("StyleBoxTexture_n1psn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p7tei")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c70he")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_blm8a")
+text = "others"
 
 [node name="TileMap" type="TileMap" parent="map"]
 y_sort_enabled = true
@@ -1345,17 +1560,18 @@ layer_0/name = "water"
 layer_0/z_index = 1
 layer_0/tile_data = PackedInt32Array(0, 65536, 11, 131071, 65536, 11, 131070, 65536, 11, 65534, 65536, 11, 65535, 65536, 11, -1, 65536, 11, -65536, 65536, 11, 1, 65536, 11, 65537, 65536, 11, 65536, 65536, 11, -65535, 65536, 11, -65534, 65536, 11, 2, 65536, 11, -2, 65536, 11, -65537, 65536, 11, -131072, 65536, 11, 65533, 65536, 11, -3, 65536, 11, -131071, 65536, 10, -131070, 131072, 10, -65533, 131072, 10, 3, 131072, 11, 65538, 65536, 11, -65539, 65536, 11, -65538, 65536, 11, -131073, 65536, 11, -131074, 65536, 11, -131075, 65536, 11, -131076, 65536, 11, -131077, 65536, 11, -131078, 65536, 11, -65542, 65536, 11, -6, 65536, 11, 65531, 65536, 11, 65532, 65536, 11, -4, 65536, 11, -65541, 65536, 11, -65540, 65536, 11, -5, 65536, 11, -7, 65536, 11, 65530, 65536, 11, 131066, 65536, 11, 131067, 65536, 11, 131068, 65536, 11, 131069, 65536, 11, 196605, 65536, 11, 196606, 65536, 11, 196607, 65536, 11, 131072, 65536, 12, 131073, 65536, 12, 196604, 65536, 11, 196603, 65536, 11, 196602, 65536, 11, 196601, 65536, 11, 131065, 65536, 11, 65529, 65536, 11, -196608, 131072, 11, 65539, 131072, 12, 131074, 131072, 12, 262143, 131072, 12, 262142, 65536, 12, 262141, 65536, 12, 262140, 65536, 12, 262139, 65536, 12, 262138, 65536, 12, 131064, 65536, 11, 65528, 65536, 11, -10, 65536, 11, 65526, 65536, 11, 65527, 65536, 11, 262137, 0, 12, 196600, 0, 12, 131063, 65536, 12, 131062, 65536, 12, -196617, 65536, 11, -196616, 65536, 11, -196615, 65536, 11, -196614, 65536, 11, -196613, 65536, 11, -196612, 65536, 11, -196611, 65536, 11, -9, 65536, 11, -11, 65536, 11, 65525, 65536, 11, 131061, 65536, 12, 65524, 65536, 11, -12, 65536, 11, -196619, 65536, 11, -196618, 65536, 11, -262153, 65536, 11, -262152, 65536, 11, -262151, 65536, 11, -262150, 65536, 11, -262149, 65536, 11, -262148, 65536, 11, -196610, 65536, 11, -196609, 65536, 11, 131060, 65536, 12, 131059, 0, 12, 65522, 65536, 12, 65521, 65536, 12, 65520, 0, 12, -196625, 0, 10, -262160, 0, 10, -327695, 0, 10, -327694, 65536, 10, -327693, 65536, 11, -393229, 0, 10, -393228, 65536, 10, -393227, 65536, 10, -393226, 65536, 10, -393225, 65536, 10, -458760, 0, 10, -458759, 65536, 10, -458758, 65536, 10, -458757, 65536, 10, -458756, 131072, 10, -393220, 65536, 11, -393219, 65536, 10, -393218, 131072, 10, -327682, 65536, 11, -327681, 131072, 10, -262145, 131072, 11, -262144, 131072, 10, -262146, 65536, 11, -262147, 65536, 11, -327683, 65536, 11, -327684, 65536, 11, -327685, 65536, 11, -393221, 65536, 11, -327686, 65536, 11, -393222, 65536, 11, -327687, 65536, 11, -393223, 65536, 11, -327688, 65536, 11, -393224, 65536, 11, -327689, 65536, 11, -262154, 65536, 11, -327690, 65536, 11, -262155, 65536, 11, -327691, 65536, 11, -196620, 65536, 11, -262156, 65536, 11, -327692, 65536, 11, 65523, 65536, 11, -13, 65536, 11, -196621, 65536, 11, -262157, 65536, 11, -14, 65536, 11, -196622, 65536, 11, -262158, 65536, 11, -196623, 65536, 11, -262159, 65536, 11, -196624, 65536, 11, -65551, 65536, 11, -65550, 65536, 11, -15, 65536, 11, -16, 65536, 11, -65552, 65536, 11, -131088, 65536, 11, -131087, 65536, 11, -131086, 65536, 11, -65549, 65536, 11, -131085, 65536, 11, -131084, 65536, 11, -65548, 65536, 11, -131083, 65536, 11, -65547, 65536, 11, -131082, 65536, 11, -65546, 65536, 11, -131081, 65536, 11, -65545, 65536, 11, -65553, 0, 11, -131089, 0, 11, -65544, 65536, 11, -8, 65536, 11, -131080, 65536, 11, -65543, 65536, 11, -131079, 65536, 11, -17, 0, 12)
 layer_1/name = "land"
-layer_1/tile_data = PackedInt32Array(65522, 65536, 2, 65521, 65536, 2, 65520, 0, 2, -16, 393216, 1, -17, 0, 2, -65553, 0, 1, -131089, 0, 1, -196625, 0, 0, -196624, 393216, 2, -262160, 0, 0, -262159, 393216, 2, -262158, 655360, 0, -327694, 65536, 0, -327695, 0, 0, -393229, 0, 0, -393228, 65536, 0, -327691, 655360, 1, -327690, 0, 4, -327689, 65536, 1, -327688, 65536, 1, -393224, 393216, 2, -393225, 65536, 0, -393226, 65536, 0, -393227, 65536, 0, -458759, 65536, 0, -458760, 0, 0, -458758, 65536, 0, -458757, 65536, 0, -458756, 131072, 0, -393220, 327680, 2, -393219, 65536, 0, -393218, 131072, 0, -327682, 327680, 2, -327681, 131072, 0, -262145, 131072, 1, -196609, 327680, 2, -131073, 65536, 4, -196608, 131072, 1, -131072, 327680, 2, -262144, 131072, 0, -131071, 65536, 0, -131070, 131072, 0, -65534, 327680, 2, -65533, 131072, 0, 3, 131072, 1, 65539, 131072, 2, 65538, 327680, 1, 131073, 65536, 2, 131072, 65536, 2, 196607, 327680, 1, 131074, 131072, 2, 262142, 65536, 2, 262141, 65536, 2, 262140, 65536, 2, 262139, 65536, 2, 262138, 65536, 2, 262137, 0, 2, 262143, 131072, 2, 196600, 0, 2, 131063, 65536, 2, 131062, 65536, 2, 131061, 65536, 2, 131060, 65536, 2, 131059, 0, 2, 65523, 393216, 1, 2, 65536, 1, 65537, 65536, 1, 1, 65536, 1, -65535, 65536, 1, 65536, 65536, 4, 0, 65536, 1, -65536, 655360, 1, 131071, 65536, 1, 65535, 65536, 1, -1, 131072, 4, -65537, 65536, 1, 196606, 0, 4, 131070, 655360, 1, 65534, 65536, 4, -2, 655360, 1, -65538, 65536, 4, -131074, 196608, 4, -196610, 65536, 4, -262146, 65536, 1, 196605, 65536, 1, 131069, 65536, 1, 65533, 65536, 1, -3, 65536, 1, -65539, 655360, 0, -131075, 65536, 1, -196611, 65536, 1, -262147, 655360, 0, -327683, 65536, 1, 196604, 131072, 4, 131068, 65536, 4, 65532, 655360, 0, -4, 65536, 1, -65540, 655360, 1, -131076, 65536, 1, -196612, 655360, 0, -262148, 65536, 1, -327684, 655360, 1, 196603, 655360, 1, 131067, 65536, 1, 65531, 655360, 1, -5, 655360, 0, -65541, 65536, 4, -131077, 65536, 1, -196613, 65536, 1, -262149, 655360, 0, -327685, 65536, 4, -393221, 65536, 1, 196602, 65536, 1, 131066, 65536, 1, 65530, 65536, 1, -6, 65536, 4, -65542, 65536, 1, -131078, 65536, 1, -196614, 655360, 0, -262150, 0, 4, -327686, 655360, 0, -393222, 65536, 1, 196601, 393216, 1, 131065, 65536, 1, 65529, 65536, 1, -7, 0, 4, -65543, 655360, 1, -131079, 65536, 1, -196615, 65536, 1, -262151, 65536, 1, -327687, 65536, 1, -393223, 655360, 1, 131064, 393216, 1, 65528, 65536, 4, -8, 65536, 1, -65544, 65536, 1, -131080, 65536, 1, -196616, 655360, 0, -262152, 65536, 1, 65527, 65536, 1, -9, 65536, 1, -65545, 655360, 0, -131081, 65536, 1, -196617, 65536, 1, -262153, 65536, 1, 65526, 65536, 1, -10, 65536, 4, -65546, 655360, 1, -131082, 655360, 0, -196618, 65536, 1, -262154, 65536, 1, 65525, 65536, 1, -11, 65536, 1, -65547, 65536, 1, -131083, 65536, 1, -196619, 65536, 1, -262155, 65536, 1, 65524, 65536, 1, -12, 65536, 1, -65548, 65536, 1, -131084, 65536, 1, -196620, 65536, 1, -262156, 65536, 1, -327692, 655360, 0, -13, 65536, 1, -65549, 65536, 1, -131085, 655360, 0, -196621, 65536, 1, -262157, 65536, 1, -327693, 393216, 2, -14, 655360, 1, -65550, 131072, 4, -131086, 196608, 4, -196622, 655360, 0, -15, 65536, 1, -65551, 655360, 0, -131087, 65536, 1, -196623, 65536, 1, -65552, 65536, 1, -131088, 655360, 1)
-layer_2/name = "stuff"
-layer_2/y_sort_enabled = true
-layer_2/y_sort_origin = -16
-layer_2/z_index = 2
-layer_2/tile_data = PackedInt32Array(4, 720896, 0, 65533, 917504, 5)
-layer_3/name = "overlay"
+layer_1/tile_data = PackedInt32Array(65533, 65536, 1, 65522, 65536, 2, 65521, 65536, 2, 65520, 0, 2, -16, 393216, 1, -17, 0, 2, -65553, 0, 1, -131089, 0, 1, -196625, 0, 0, -196624, 393216, 2, -262160, 0, 0, -262159, 393216, 2, -262158, 655360, 0, -327694, 65536, 0, -327695, 0, 0, -393229, 0, 0, -393228, 65536, 0, -327691, 655360, 1, -327690, 0, 4, -327689, 65536, 1, -327688, 65536, 1, -393224, 393216, 2, -393225, 65536, 0, -393226, 65536, 0, -393227, 65536, 0, -458759, 65536, 0, -458760, 0, 0, -458758, 65536, 0, -458757, 65536, 0, -458756, 131072, 0, -393220, 327680, 2, -393219, 65536, 0, -393218, 131072, 0, -327682, 327680, 2, -327681, 131072, 0, -262145, 131072, 1, -196609, 327680, 2, -131073, 65536, 4, -196608, 131072, 1, -131072, 327680, 2, -262144, 131072, 0, -131071, 65536, 0, -131070, 131072, 0, -65534, 327680, 2, -65533, 131072, 0, 3, 131072, 1, 65539, 131072, 2, 65538, 327680, 1, 131073, 65536, 2, 131072, 65536, 2, 196607, 327680, 1, 131074, 131072, 2, 262142, 65536, 2, 262141, 65536, 2, 262140, 65536, 2, 262139, 65536, 2, 262138, 65536, 2, 262137, 0, 2, 262143, 131072, 2, 196600, 0, 2, 131063, 65536, 2, 131062, 65536, 2, 131061, 65536, 2, 131060, 65536, 2, 131059, 0, 2, 65523, 393216, 1, 2, 65536, 1, 65537, 65536, 1, 1, 65536, 1, -65535, 65536, 1, 65536, 65536, 4, 0, 65536, 1, -65536, 655360, 1, 131071, 65536, 1, 65535, 65536, 1, -1, 131072, 4, -65537, 65536, 1, 196606, 0, 4, 131070, 655360, 1, 65534, 65536, 4, -2, 655360, 1, -65538, 65536, 4, -131074, 196608, 4, -196610, 65536, 4, -262146, 65536, 1, 196605, 65536, 1, 131069, 65536, 1, -3, 65536, 1, -65539, 655360, 0, -131075, 65536, 1, -196611, 65536, 1, -262147, 655360, 0, -327683, 65536, 1, 196604, 131072, 4, 131068, 65536, 4, 65532, 655360, 0, -4, 65536, 1, -65540, 655360, 1, -131076, 65536, 1, -196612, 655360, 0, -262148, 65536, 1, -327684, 655360, 1, 196603, 655360, 1, 131067, 65536, 1, 65531, 655360, 1, -5, 655360, 0, -65541, 65536, 4, -131077, 65536, 1, -196613, 65536, 1, -262149, 655360, 0, -327685, 65536, 4, -393221, 65536, 1, 196602, 65536, 1, 131066, 65536, 1, 65530, 65536, 1, -6, 65536, 4, -65542, 65536, 1, -131078, 65536, 1, -196614, 655360, 0, -262150, 0, 4, -327686, 655360, 0, -393222, 65536, 1, 196601, 393216, 1, 131065, 65536, 1, 65529, 65536, 1, -7, 0, 4, -65543, 655360, 1, -131079, 65536, 1, -196615, 65536, 1, -262151, 65536, 1, -327687, 65536, 1, -393223, 655360, 1, 131064, 393216, 1, 65528, 65536, 4, -8, 65536, 1, -65544, 65536, 1, -131080, 65536, 1, -196616, 655360, 0, -262152, 65536, 1, 65527, 65536, 1, -9, 65536, 1, -65545, 655360, 0, -131081, 65536, 1, -196617, 65536, 1, -262153, 65536, 1, 65526, 65536, 1, -10, 65536, 4, -65546, 655360, 1, -131082, 655360, 0, -196618, 65536, 1, -262154, 65536, 1, 65525, 65536, 1, -11, 65536, 1, -65547, 65536, 1, -131083, 65536, 1, -196619, 65536, 1, -262155, 65536, 1, 65524, 65536, 1, -12, 65536, 1, -65548, 65536, 1, -131084, 65536, 1, -196620, 65536, 1, -262156, 65536, 1, -327692, 655360, 0, -13, 65536, 1, -65549, 65536, 1, -131085, 655360, 0, -196621, 65536, 1, -262157, 65536, 1, -327693, 393216, 2, -14, 655360, 1, -65550, 131072, 4, -131086, 196608, 4, -196622, 655360, 0, -15, 65536, 1, -65551, 655360, 0, -131087, 65536, 1, -196623, 65536, 1, -65552, 65536, 1, -131088, 655360, 1)
+layer_2/name = "path"
+layer_3/name = "stuff"
 layer_3/y_sort_enabled = true
-layer_3/y_sort_origin = 6
+layer_3/y_sort_origin = -16
 layer_3/z_index = 2
-layer_3/tile_data = PackedInt32Array(4, 720896, 2)
+layer_3/tile_data = PackedInt32Array(65533, 917504, 5, 4, 720896, 0)
+layer_4/name = "overlay"
+layer_4/y_sort_enabled = true
+layer_4/y_sort_origin = 6
+layer_4/z_index = 2
+layer_4/tile_data = PackedInt32Array(4, 720896, 2)
 
 [node name="bridge" type="Area2D" parent="map"]
 position = Vector2(1, 0)
@@ -1378,6 +1594,7 @@ region_enabled = true
 region_rect = Rect2(224, 0, 16, 16)
 
 [node name="2t_horizontal" type="Sprite2D" parent="build_cursor"]
+visible = false
 z_index = 1000
 texture_filter = 1
 texture = ExtResource("1_4xfga")
@@ -1396,5 +1613,8 @@ offset = Vector2(4, -16)
 region_enabled = true
 region_rect = Rect2(240, 0, 16, 32)
 
+[connection signal="toggled" from="map/player/build-gui/tent" to="map/player/build-gui" method="_on_tent_toggled"]
+[connection signal="toggled" from="map/player/build-gui/terrain" to="map/player/build-gui" method="_on_terrain_toggled"]
+[connection signal="toggled" from="map/player/build-gui/others" to="map/player/build-gui" method="_on_others_toggled"]
 [connection signal="body_entered" from="map/bridge" to="map/player" method="_on_bridge_entered"]
 [connection signal="body_exited" from="map/bridge" to="map/player" method="_on_bridge_exited"]

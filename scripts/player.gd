@@ -9,32 +9,35 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("up"):
 		input_vector.y -= 1
-		sprite.play("back_walk")
+		play_anim("back_walk")
 		sprite.flip_h = false
 	elif Input.is_action_pressed("down"):
 		input_vector.y += 1
-		sprite.play("front_walk")
+		play_anim("front_walk")
 		sprite.flip_h = false
 	elif Input.is_action_pressed("left"):
 		input_vector.x -= 1
-		sprite.play("side_walk")
+		play_anim("side_walk")
 		sprite.flip_h = true
 	elif Input.is_action_pressed("right"):
 		input_vector.x += 1
-		sprite.play("side_walk")
+		play_anim("side_walk")
 		sprite.flip_h = false
 
 	velocity = input_vector.normalized() * speed
 
 	if velocity == Vector2.ZERO:
-		sprite.play("idle")
+		play_anim("idle")
 		sprite.flip_h = false
 	
 	move_and_slide()
 
+func play_anim(anim):
+	if sprite.animation != anim:
+		sprite.play(anim)
+
 func _on_bridge_entered(body:Node2D) -> void:
 	if body == self:
-		print("yo")
 		self.set_collision_mask_value(1, false)
 		self.set_collision_mask_value(8, true)
 

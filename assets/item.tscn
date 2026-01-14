@@ -1,15 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkq47f6uio7k5"]
+[gd_scene load_steps=8 format=3 uid="uid://dkq47f6uio7k5"]
 
-[ext_resource type="Texture2D" uid="uid://c0frglep70tfl" path="res://assets/gui/itembox.png" id="1_l4kt4"]
+[ext_resource type="Script" uid="uid://r38wrysoo430" path="res://scripts/item.gd" id="1_25fd1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_25fd1"]
+load_path = "res://.godot/imported/itembox.png-046b75decb5efad25882bbe4ddecf741.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohwkh"]
+atlas = SubResource("CompressedTexture2D_25fd1")
+region = Rect2(0, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvlm7"]
+atlas = SubResource("CompressedTexture2D_25fd1")
+region = Rect2(40, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sokgv"]
+atlas = SubResource("CompressedTexture2D_25fd1")
+region = Rect2(20, 0, 20, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l4kt4"]
+load_path = "res://.godot/imported/itembox.png-046b75decb5efad25882bbe4ddecf741.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25fd1"]
+atlas = SubResource("CompressedTexture2D_l4kt4")
+region = Rect2(60, 0, 20, 28)
 
 [node name="item" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 20.0
 offset_bottom = 28.0
+mouse_filter = 2
+script = ExtResource("1_25fd1")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 28.0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ohwkh")
+texture_pressed = SubResource("AtlasTexture_wvlm7")
+texture_hover = SubResource("AtlasTexture_sokgv")
+
+[node name="pic" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 19.0
-texture = ExtResource("1_l4kt4")
+mouse_filter = 2
+texture = SubResource("AtlasTexture_25fd1")
+
+[connection signal="toggled" from="TextureButton" to="." method="_on_button_toggled"]
