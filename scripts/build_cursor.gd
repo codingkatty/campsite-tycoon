@@ -55,6 +55,10 @@ func _process(delta: float) -> void:
 	mouse_position = get_global_mouse_position()
 	tilepos = tilemap.local_to_map(mouse_position)
 
+	if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+		if tilepos != null and is_select_item:
+			crnt_pointer.position = tilepos * 16
+
 	if is_select_item:
 		if get_viewport().gui_get_hovered_control() != null:
 			crnt_pointer.visible = false
@@ -92,6 +96,14 @@ func change_item(data: ItemData):
 	pointer2_v.visible = false
 	pointer_big.visible = false
 
+	if ori_region_rect != null and crnt_pointer != null:
+			if crnt_pointer == pointer_big:
+				for i in range(pointer_big.get_child_count()):
+					var child = pointer_big.get_child(i)
+					child.region_rect.position.x = ori_region_rect[i].position.x
+			else:
+				crnt_pointer.region_rect.position.x = ori_region_rect[0].position.x
+	
 	if data.size == Vector2i(1, 1):
 		crnt_pointer = pointer1
 	elif data.size == Vector2i(2, 1):
@@ -151,13 +163,13 @@ func check_valid_itemplace(tpos, size: Vector2i) -> bool:
 			#print("neighbor", i)
 			#return false
 		if no_overlap.has(i):
-			print("overlap", i)
+			#print("overlap", i)
 			return false
 		elif check_air(i, 1, offsets2):
-			print("air", i)
+			#print("air", i)
 			return false
 		elif no_place.has(i):
-			print("no place", i)
+			#print("no place", i)
 			return false
 	return true
 
