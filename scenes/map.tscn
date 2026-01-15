@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://b676xmxuyfpsu"]
+[gd_scene load_steps=84 format=3 uid="uid://b676xmxuyfpsu"]
 
 [ext_resource type="Texture2D" uid="uid://chis0yc4wreei" path="res://assets/tilemap/island.png" id="1_4xfga"]
 [ext_resource type="Script" uid="uid://lhijiaky7elp" path="res://scripts/player.gd" id="2_2lpho"]
@@ -232,12 +232,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_674bt"]
-radius = 4.0
-height = 10.0
+radius = 5.0
+height = 12.0
 
 [sub_resource type="Resource" id="Resource_wslke"]
 script = ExtResource("5_mlgqr")
-name = "basic tent"
+name = "basic tent red"
 item_type = "tent"
 price = 20
 size = Vector2i(2, 1)
@@ -252,7 +252,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_blm8a"]
 script = ExtResource("5_mlgqr")
-name = "basic tent"
+name = "basic tent yellow"
 item_type = "tent"
 price = 20
 size = Vector2i(2, 1)
@@ -267,7 +267,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_mlgqr"]
 script = ExtResource("5_mlgqr")
-name = "basic tent"
+name = "basic tent blue"
 item_type = "tent"
 price = 20
 size = Vector2i(2, 1)
@@ -282,7 +282,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_n1psn"]
 script = ExtResource("5_mlgqr")
-name = "basic tent"
+name = "basic tent green"
 item_type = "tent"
 price = 20
 size = Vector2i(2, 1)
@@ -297,7 +297,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_6k6j1"]
 script = ExtResource("5_mlgqr")
-name = "basic tent"
+name = "basic tent purple"
 item_type = "tent"
 price = 20
 size = Vector2i(2, 1)
@@ -312,7 +312,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_m335s"]
 script = ExtResource("5_mlgqr")
-name = "basic tent"
+name = "basic tent pink"
 item_type = "tent"
 price = 20
 size = Vector2i(2, 1)
@@ -357,7 +357,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_p7tei"]
 script = ExtResource("5_mlgqr")
-name = "pretty tent"
+name = "pretty tent pastel"
 item_type = "tent"
 price = 0
 size = Vector2i(3, 2)
@@ -372,7 +372,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_c70he"]
 script = ExtResource("5_mlgqr")
-name = "pretty tent"
+name = "pretty tent dark purple"
 item_type = "tent"
 price = 0
 size = Vector2i(3, 2)
@@ -387,7 +387,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_mo32q"]
 script = ExtResource("5_mlgqr")
-name = "pretty tent"
+name = "pretty tent nature"
 item_type = "tent"
 price = 0
 size = Vector2i(3, 2)
@@ -402,7 +402,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_sq6bu"]
 script = ExtResource("5_mlgqr")
-name = "pretty tent"
+name = "pretty tent modern"
 item_type = "tent"
 price = 0
 size = Vector2i(3, 2)
@@ -417,7 +417,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_4b7dj"]
 script = ExtResource("5_mlgqr")
-name = "pretty tent"
+name = "pretty tent purple"
 item_type = "tent"
 price = 0
 size = Vector2i(3, 2)
@@ -432,7 +432,7 @@ metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
 [sub_resource type="Resource" id="Resource_2cfcp"]
 script = ExtResource("5_mlgqr")
-name = "pretty tent"
+name = "pretty tent white"
 item_type = "tent"
 price = 0
 size = Vector2i(3, 2)
@@ -445,14 +445,74 @@ is_delete = false
 target_layer = 2
 metadata/_custom_type_script = "uid://rj73wr4kiy0q"
 
-[sub_resource type="Resource" id="Resource_y2ir2"]
+[sub_resource type="Resource" id="Resource_5u2yt"]
 script = ExtResource("5_mlgqr")
-name = "pretty tent"
-item_type = "tent"
-price = 0
-size = Vector2i(3, 2)
-atlas_x = 300
-item_tile = Vector2i(18, 14)
+name = "toilet small pastel"
+item_type = "amenities"
+price = 30
+size = Vector2i(1, 2)
+atlas_x = 60
+item_tile = Vector2i(0, 16)
+is_terrain = false
+terrain_set = -1
+terrain = -1
+is_delete = false
+target_layer = 2
+metadata/_custom_type_script = "uid://rj73wr4kiy0q"
+
+[sub_resource type="Resource" id="Resource_6ek7f"]
+script = ExtResource("5_mlgqr")
+name = "toilet small nature"
+item_type = "amenities"
+price = 30
+size = Vector2i(1, 2)
+atlas_x = 80
+item_tile = Vector2i(1, 16)
+is_terrain = false
+terrain_set = -1
+terrain = -1
+is_delete = false
+target_layer = 2
+metadata/_custom_type_script = "uid://rj73wr4kiy0q"
+
+[sub_resource type="Resource" id="Resource_30iet"]
+script = ExtResource("5_mlgqr")
+name = "toilet small nature"
+item_type = "amenities"
+price = 30
+size = Vector2i(1, 2)
+atlas_x = 100
+item_tile = Vector2i(2, 16)
+is_terrain = false
+terrain_set = -1
+terrain = -1
+is_delete = false
+target_layer = 2
+metadata/_custom_type_script = "uid://rj73wr4kiy0q"
+
+[sub_resource type="Resource" id="Resource_mkblt"]
+script = ExtResource("5_mlgqr")
+name = "toilet small white"
+item_type = "amenities"
+price = 30
+size = Vector2i(1, 2)
+atlas_x = 120
+item_tile = Vector2i(3, 16)
+is_terrain = false
+terrain_set = -1
+terrain = -1
+is_delete = false
+target_layer = 2
+metadata/_custom_type_script = "uid://rj73wr4kiy0q"
+
+[sub_resource type="Resource" id="Resource_4o3w1"]
+script = ExtResource("5_mlgqr")
+name = "toilet small retro"
+item_type = "amenities"
+price = 30
+size = Vector2i(1, 2)
+atlas_x = 140
+item_tile = Vector2i(4, 16)
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -1576,6 +1636,29 @@ texture = ExtResource("1_4xfga")
 15:14/0 = 0
 15:14/0/texture_origin = Vector2i(-16, 8)
 15:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 4, 39, 4, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
+0:16/size_in_atlas = Vector2i(1, 2)
+0:16/0 = 0
+0:16/0/texture_origin = Vector2i(0, 8)
+0:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -5, 8, -5, 8, 8)
+1:16/size_in_atlas = Vector2i(1, 2)
+1:16/0 = 0
+1:16/0/texture_origin = Vector2i(0, 8)
+1:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -5, 8, -5, 8, 8)
+2:16/size_in_atlas = Vector2i(1, 2)
+2:16/0 = 0
+2:16/0/texture_origin = Vector2i(0, 8)
+2:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -5, 8, -5, 8, 8)
+3:16/size_in_atlas = Vector2i(1, 2)
+3:16/0 = 0
+3:16/0/texture_origin = Vector2i(0, 8)
+3:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -5, 8, -5, 8, 8)
+4:16/size_in_atlas = Vector2i(1, 2)
+4:16/0 = 0
+4:16/0/texture_origin = Vector2i(0, 8)
+4:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -5, 8, -5, 8, 8)
+14:9/0 = 0
+14:9/0/y_sort_origin = 6
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, -5, 8, 0, 8, 2, 6, 3, 8, 6, 8, 8, 6, 8, 2, 3, 0, -5, 2, -8, 2)
 
 [sub_resource type="TileSet" id="TileSet_gldc4"]
 physics_layer_0/collision_layer = 1
@@ -1627,7 +1710,7 @@ layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
 script = ExtResource("4_blm8a")
-item_data = Array[ExtResource("5_mlgqr")]([SubResource("Resource_wslke"), SubResource("Resource_blm8a"), SubResource("Resource_mlgqr"), SubResource("Resource_n1psn"), SubResource("Resource_6k6j1"), SubResource("Resource_m335s"), SubResource("Resource_gw3fx"), SubResource("Resource_c00ee"), SubResource("Resource_p7tei"), SubResource("Resource_c70he"), SubResource("Resource_mo32q"), SubResource("Resource_sq6bu"), SubResource("Resource_4b7dj"), SubResource("Resource_2cfcp"), SubResource("Resource_y2ir2")])
+item_data = Array[ExtResource("5_mlgqr")]([SubResource("Resource_wslke"), SubResource("Resource_blm8a"), SubResource("Resource_mlgqr"), SubResource("Resource_n1psn"), SubResource("Resource_6k6j1"), SubResource("Resource_m335s"), SubResource("Resource_gw3fx"), SubResource("Resource_c00ee"), SubResource("Resource_p7tei"), SubResource("Resource_c70he"), SubResource("Resource_mo32q"), SubResource("Resource_sq6bu"), SubResource("Resource_4b7dj"), SubResource("Resource_2cfcp"), SubResource("Resource_5u2yt"), SubResource("Resource_6ek7f"), SubResource("Resource_30iet"), SubResource("Resource_mkblt"), SubResource("Resource_4o3w1")])
 
 [node name="build-catalog-container" type="NinePatchRect" parent="map/player/build-gui"]
 texture_filter = 1
@@ -1695,6 +1778,7 @@ offset_right = 138.0
 offset_bottom = 75.0
 mouse_filter = 2
 theme = ExtResource("5_jh32y")
+horizontal_scroll_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="map/player/build-gui/ScrollContainer"]
 layout_mode = 2
@@ -1767,7 +1851,7 @@ layer_3/name = "stuff"
 layer_3/y_sort_enabled = true
 layer_3/y_sort_origin = -16
 layer_3/z_index = 2
-layer_3/tile_data = PackedInt32Array(4, 720896, 0)
+layer_3/tile_data = PackedInt32Array(4, 720896, 0, -65534, 917504, 9)
 layer_4/name = "overlay"
 layer_4/y_sort_enabled = true
 layer_4/y_sort_origin = 6

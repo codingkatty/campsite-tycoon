@@ -64,28 +64,44 @@ func _process(delta: float) -> void:
 			crnt_pointer.visible = false
 		else:
 			crnt_pointer.visible = true
-			if check_valid_itemplace(tilepos, crnt_item.size):
-				if crnt_pointer == pointer_big:
-					for i in range(pointer_big.get_child_count()):
-						var child = pointer_big.get_child(i)
-						child.region_rect = ori_region_rect[i]
+			if crnt_item.is_terrain:
+				if check_valid_path(tilepos, crnt_item.size):
+					if crnt_pointer == pointer_big:
+						for i in range(pointer_big.get_child_count()):
+							var child = pointer_big.get_child(i)
+							child.region_rect = ori_region_rect[i]
+					else:
+						crnt_pointer.region_rect = ori_region_rect[0]
 				else:
-					crnt_pointer.region_rect = ori_region_rect[0]
+					if crnt_pointer == pointer_big:
+						for i in range(pointer_big.get_child_count()):
+							var child = pointer_big.get_child(i)
+							child.region_rect.position.x = ori_region_rect[i].position.x + 32
+					else:
+						crnt_pointer.region_rect.position.x = ori_region_rect[0].position.x + 32
 			else:
-				if crnt_pointer == pointer_big:
-					for i in range(pointer_big.get_child_count()):
-						var child = pointer_big.get_child(i)
-						child.region_rect.position.x = ori_region_rect[i].position.x + 32
+				if check_valid_itemplace(tilepos, crnt_item.size):
+					if crnt_pointer == pointer_big:
+						for i in range(pointer_big.get_child_count()):
+							var child = pointer_big.get_child(i)
+							child.region_rect = ori_region_rect[i]
+					else:
+						crnt_pointer.region_rect = ori_region_rect[0]
 				else:
-					crnt_pointer.region_rect.position.x = ori_region_rect[0].position.x + 32
+					if crnt_pointer == pointer_big:
+						for i in range(pointer_big.get_child_count()):
+							var child = pointer_big.get_child(i)
+							child.region_rect.position.x = ori_region_rect[i].position.x + 32
+					else:
+						crnt_pointer.region_rect.position.x = ori_region_rect[0].position.x + 32
 
 func reset():
 	is_select_item = false
 	crnt_item = null
 	crnt_tile = null
-	crnt_pointer = null
 
 func change_item(data: ItemData):
+	print(data.name)
 	is_select_item = true
 	crnt_item = data
 	crnt_tile = data.item_tile
@@ -97,12 +113,12 @@ func change_item(data: ItemData):
 	pointer_big.visible = false
 
 	if ori_region_rect != null and crnt_pointer != null:
-			if crnt_pointer == pointer_big:
-				for i in range(pointer_big.get_child_count()):
-					var child = pointer_big.get_child(i)
-					child.region_rect.position.x = ori_region_rect[i].position.x
-			else:
-				crnt_pointer.region_rect.position.x = ori_region_rect[0].position.x
+		if crnt_pointer == pointer_big:
+			for i in range(pointer_big.get_child_count()):
+				var child = pointer_big.get_child(i)
+				child.region_rect.position.x = ori_region_rect[i].position.x
+		else:
+			crnt_pointer.region_rect.position.x = ori_region_rect[0].position.x
 	
 	if data.size == Vector2i(1, 1):
 		crnt_pointer = pointer1
@@ -173,13 +189,27 @@ func check_valid_itemplace(tpos, size: Vector2i) -> bool:
 			return false
 	return true
 
+func check_valid_path(tpos, size: Vector2i) -> bool:
+	var arr = []
+	for x in range(size.x):
+		for y in range(size.y):
+			arr.append(tpos + Vector2i(x, -y))
+
+	for i in arr:
+		if check_air(i, 1, offsets2):
+			return false
+		elif no_overlap.has(i):
+			return false
+	return true
+
 func build():
-	if is_select_item and check_valid_itemplace(tilepos, crnt_item.size):
-		if crnt_item.is_delete and crnt_item.is_terrain:
-			tilemap.set_cells_terrain_connect(crnt_item.target_layer, [tilepos], 0, -1, false)
-		elif crnt_item.is_terrain:
-			tilemap.set_cells_terrain_connect(2, [tilepos], crnt_item.terrain_set, crnt_item.terrain, false)
-		else:
+	if is_select_item:
+		if crnt_item.is_terrain and check_valid_path(tilepos, crnt_item.size):
+			if crnt_item.is_delete:
+				tilemap.set_cells_terrain_connect(2, [tilepos], 0, -1, false)
+			else:
+				tilemap.set_cells_terrain_connect(2, [tilepos], crnt_item.terrain_set, crnt_item.terrain, false)
+		elif not crnt_item.is_terrain and check_valid_itemplace(tilepos, crnt_item.size):
 			for x in range(crnt_item.size.x):
 				for y in range(crnt_item.size.y):
 					no_place.append(tilepos + Vector2i(x, -y))

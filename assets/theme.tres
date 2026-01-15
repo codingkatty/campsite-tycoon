@@ -1,6 +1,5 @@
 [gd_resource type="Theme" load_steps=17 format=3 uid="uid://b32ioaa2prmvr"]
 
-[ext_resource type="Texture2D" uid="uid://bppjnavssp7u7" path="res://assets/gui/scrollbar.png" id="1_5x3i2"]
 [ext_resource type="FontFile" uid="uid://cla4bxvj7ex5x" path="res://assets/gui/edit-undo.brk.ttf" id="1_lu33j"]
 [ext_resource type="Texture2D" uid="uid://c180pxkn1w3gt" path="res://assets/gui/box.png" id="1_wl1kw"]
 
@@ -47,20 +46,24 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x3i2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl1kw"]
 bg_color = Color(0.301961, 0.607843, 0.901961, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl1kw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu33j"]
 bg_color = Color(0.53216, 0.745494, 0.9638, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu33j"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wycmq"]
 bg_color = Color(0.764884, 0.905063, 1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wl1kw"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x2pqw"]
+load_path = "res://.godot/imported/scrollbar.png-918b58548b7575be4db4ad999693a84a.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wms38"]
 content_margin_top = 4.0
-texture = ExtResource("1_5x3i2")
+texture = SubResource("CompressedTexture2D_x2pqw")
 texture_margin_left = 1.0
 texture_margin_right = 1.0
+region_rect = Rect2(0, 0, 16, 4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y61vb"]
 bg_color = Color(1, 1, 1, 1)
@@ -77,8 +80,8 @@ Button/styles/focus = SubResource("StyleBoxTexture_lu33j")
 Button/styles/hover = SubResource("StyleBoxTexture_x2pqw")
 Button/styles/normal = SubResource("StyleBoxTexture_wycmq")
 Button/styles/pressed = SubResource("StyleBoxTexture_e8htd")
-HScrollBar/styles/grabber = SubResource("StyleBoxFlat_5x3i2")
-HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_wl1kw")
-HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_lu33j")
-HScrollBar/styles/scroll = SubResource("StyleBoxTexture_wl1kw")
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_wl1kw")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_lu33j")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_wycmq")
+HScrollBar/styles/scroll = SubResource("StyleBoxTexture_wms38")
 Panel/styles/panel = SubResource("StyleBoxFlat_y61vb")
