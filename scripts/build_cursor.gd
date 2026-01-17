@@ -101,7 +101,7 @@ func reset():
 	crnt_tile = null
 
 func change_item(data: ItemData):
-	print(data.name)
+	#print(data.name)
 	is_select_item = true
 	crnt_item = data
 	crnt_tile = data.item_tile
@@ -213,4 +213,24 @@ func build():
 			for x in range(crnt_item.size.x):
 				for y in range(crnt_item.size.y):
 					no_place.append(tilepos + Vector2i(x, -y))
+
+			if crnt_item.item_type == "tent":
+				no_place.append(find_tent_entrance(tilepos))
+				add_tent_data(find_tent_entrance(tilepos), crnt_item.occupy_max)
+
 			tilemap.set_cell(3, tilepos, 0, crnt_tile)
+
+func add_tent_data(tpos: Vector2i, occupy_size: int):
+	var tent_data = {
+		"index": Utils.get_tent_index(),
+		"position": tilemap.map_to_local(tpos) + Vector2(0, -8),
+		"max": occupy_size,
+		"occupied": false,
+		"occupants": []
+	}
+
+	Utils.tent_data.append(tent_data)
+
+func find_tent_entrance(tpos: Vector2i) -> Vector2i:
+	var entrance = tpos + Vector2i(1, 1)
+	return entrance

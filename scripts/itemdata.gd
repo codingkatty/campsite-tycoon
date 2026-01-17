@@ -6,6 +6,7 @@ class_name ItemData extends Resource
 @export var size: Vector2i = Vector2i(1, 1)
 @export var atlas_x: int = 60
 @export var item_tile: Vector2i = Vector2i(-1, -1)
+@export var occupy_max: int = 0
 
 # terrain
 @export var is_terrain: bool = false # autotile

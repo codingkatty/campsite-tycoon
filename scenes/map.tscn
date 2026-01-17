@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://b676xmxuyfpsu"]
+[gd_scene load_steps=113 format=3 uid="uid://b676xmxuyfpsu"]
 
 [ext_resource type="Texture2D" uid="uid://chis0yc4wreei" path="res://assets/tilemap/island.png" id="1_4xfga"]
 [ext_resource type="Script" uid="uid://lhijiaky7elp" path="res://scripts/player.gd" id="2_2lpho"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://rj73wr4kiy0q" path="res://scripts/itemdata.gd" id="5_mlgqr"]
 [ext_resource type="Texture2D" uid="uid://cf7wwneklev7" path="res://assets/gui/coin.png" id="7_mlgqr"]
 [ext_resource type="Script" uid="uid://djaju5tso68d1" path="res://scripts/main_gui.gd" id="10_wslke"]
+[ext_resource type="Script" uid="uid://clmt8pkwjvpgf" path="res://scripts/npc_control.gd" id="13_gw3fx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rug40"]
 atlas = ExtResource("4_jh32y")
@@ -244,6 +245,7 @@ price = 20
 size = Vector2i(2, 1)
 atlas_x = 60
 item_tile = Vector2i(14, 5)
+occupy_max = 1
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -259,6 +261,7 @@ price = 20
 size = Vector2i(2, 1)
 atlas_x = 80
 item_tile = Vector2i(16, 5)
+occupy_max = 1
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -274,6 +277,7 @@ price = 20
 size = Vector2i(2, 1)
 atlas_x = 100
 item_tile = Vector2i(14, 7)
+occupy_max = 1
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -289,6 +293,7 @@ price = 20
 size = Vector2i(2, 1)
 atlas_x = 120
 item_tile = Vector2i(16, 7)
+occupy_max = 1
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -304,6 +309,7 @@ price = 20
 size = Vector2i(2, 1)
 atlas_x = 140
 item_tile = Vector2i(16, 9)
+occupy_max = 1
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -319,6 +325,7 @@ price = 20
 size = Vector2i(2, 1)
 atlas_x = 160
 item_tile = Vector2i(16, 11)
+occupy_max = 1
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -334,6 +341,7 @@ price = 0
 size = Vector2i(1, 1)
 atlas_x = 60
 item_tile = Vector2i(-1, -1)
+occupy_max = 0
 is_terrain = true
 terrain_set = 0
 terrain = 1
@@ -349,6 +357,7 @@ price = 0
 size = Vector2i(1, 1)
 atlas_x = 80
 item_tile = Vector2i(-1, -1)
+occupy_max = 0
 is_terrain = true
 terrain_set = -1
 terrain = -1
@@ -364,6 +373,7 @@ price = 0
 size = Vector2i(3, 2)
 atlas_x = 180
 item_tile = Vector2i(0, 14)
+occupy_max = 2
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -379,6 +389,7 @@ price = 0
 size = Vector2i(3, 2)
 atlas_x = 200
 item_tile = Vector2i(3, 14)
+occupy_max = 2
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -394,6 +405,7 @@ price = 0
 size = Vector2i(3, 2)
 atlas_x = 220
 item_tile = Vector2i(6, 14)
+occupy_max = 2
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -409,6 +421,7 @@ price = 0
 size = Vector2i(3, 2)
 atlas_x = 240
 item_tile = Vector2i(9, 14)
+occupy_max = 2
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -424,6 +437,7 @@ price = 0
 size = Vector2i(3, 2)
 atlas_x = 260
 item_tile = Vector2i(12, 14)
+occupy_max = 2
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -439,6 +453,7 @@ price = 0
 size = Vector2i(3, 2)
 atlas_x = 280
 item_tile = Vector2i(15, 14)
+occupy_max = 2
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -454,6 +469,7 @@ price = 30
 size = Vector2i(1, 2)
 atlas_x = 60
 item_tile = Vector2i(0, 16)
+occupy_max = 0
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -469,6 +485,7 @@ price = 30
 size = Vector2i(1, 2)
 atlas_x = 80
 item_tile = Vector2i(1, 16)
+occupy_max = 0
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -484,6 +501,7 @@ price = 30
 size = Vector2i(1, 2)
 atlas_x = 100
 item_tile = Vector2i(2, 16)
+occupy_max = 0
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -499,6 +517,7 @@ price = 30
 size = Vector2i(1, 2)
 atlas_x = 120
 item_tile = Vector2i(3, 16)
+occupy_max = 0
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -514,6 +533,7 @@ price = 30
 size = Vector2i(1, 2)
 atlas_x = 140
 item_tile = Vector2i(4, 16)
+occupy_max = 0
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -529,6 +549,7 @@ price = 0
 size = Vector2i(1, 1)
 atlas_x = 160
 item_tile = Vector2i(15, 9)
+occupy_max = 0
 is_terrain = false
 terrain_set = -1
 terrain = -1
@@ -560,12 +581,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mlgqr"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wslke"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c00ee"]
 atlas = SubResource("CompressedTexture2D_mlgqr")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw3fx"]
-texture = SubResource("AtlasTexture_wslke")
+texture = SubResource("AtlasTexture_c00ee")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -574,12 +595,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_blm8a"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_blm8a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7tei"]
 atlas = SubResource("CompressedTexture2D_blm8a")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wslke"]
-texture = SubResource("AtlasTexture_blm8a")
+texture = SubResource("AtlasTexture_p7tei")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -588,12 +609,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n1psn"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c00ee"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c70he"]
 atlas = SubResource("CompressedTexture2D_n1psn")
 region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7tei"]
-texture = SubResource("AtlasTexture_c00ee")
+texture = SubResource("AtlasTexture_c70he")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -602,12 +623,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wslke"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gw3fx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo32q"]
 atlas = SubResource("CompressedTexture2D_wslke")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1psn"]
-texture = SubResource("AtlasTexture_gw3fx")
+texture = SubResource("AtlasTexture_mo32q")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -616,12 +637,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c00ee"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7tei"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k6j1"]
 atlas = SubResource("CompressedTexture2D_c00ee")
 region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c70he"]
-texture = SubResource("AtlasTexture_p7tei")
+texture = SubResource("AtlasTexture_6k6j1")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -630,12 +651,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p7tei"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c70he"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m335s"]
 atlas = SubResource("CompressedTexture2D_p7tei")
 region = Rect2(48, 48, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mo32q"]
-texture = SubResource("AtlasTexture_c70he")
+texture = SubResource("AtlasTexture_m335s")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -644,12 +665,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c70he"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mo32q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq6bu"]
 atlas = SubResource("CompressedTexture2D_c70he")
 region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6k6j1"]
-texture = SubResource("AtlasTexture_mo32q")
+texture = SubResource("AtlasTexture_sq6bu")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -658,12 +679,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mo32q"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6k6j1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b7dj"]
 atlas = SubResource("CompressedTexture2D_mo32q")
 region = Rect2(48, 48, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m335s"]
-texture = SubResource("AtlasTexture_6k6j1")
+texture = SubResource("AtlasTexture_4b7dj")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -672,12 +693,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6k6j1"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m335s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cfcp"]
 atlas = SubResource("CompressedTexture2D_6k6j1")
 region = Rect2(16, 48, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sq6bu"]
-texture = SubResource("AtlasTexture_m335s")
+texture = SubResource("AtlasTexture_2cfcp")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -699,6 +720,34 @@ unicode = 107
 [sub_resource type="Shortcut" id="Shortcut_gw3fx"]
 events = [SubResource("InputEventKey_wslke")]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sq6bu"]
+load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u2yt"]
+atlas = SubResource("CompressedTexture2D_sq6bu")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30iet"]
+texture = SubResource("AtlasTexture_5u2yt")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m335s"]
+load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2ir2"]
+atlas = SubResource("CompressedTexture2D_m335s")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5u2yt"]
+texture = SubResource("AtlasTexture_y2ir2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
 [sub_resource type="InputEventKey" id="InputEventKey_mlgqr"]
 device = -1
 keycode = 69
@@ -706,6 +755,9 @@ unicode = 101
 
 [sub_resource type="Shortcut" id="Shortcut_wslke"]
 events = [SubResource("InputEventKey_mlgqr")]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gw3fx"]
+radius = 15.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
 texture = ExtResource("1_4xfga")
@@ -1191,6 +1243,7 @@ texture = ExtResource("1_4xfga")
 4:6/0/terrains_peering_bit/bottom_side = 1
 4:6/0/terrains_peering_bit/top_side = 1
 4:6/0/terrains_peering_bit/top_right_corner = 1
+4:5/next_alternative_id = 3
 4:5/0 = 0
 4:5/0/terrain_set = 0
 4:5/0/terrain = 1
@@ -1703,15 +1756,15 @@ texture = ExtResource("1_4xfga")
 0:14/size_in_atlas = Vector2i(3, 2)
 0:14/0 = 0
 0:14/0/texture_origin = Vector2i(-16, 8)
-0:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 4, 39, 4, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
+0:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 3, 39, 3, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
 3:14/size_in_atlas = Vector2i(3, 2)
 3:14/0 = 0
 3:14/0/texture_origin = Vector2i(-16, 8)
-3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 4, 39, 4, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
+3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 3, 39, 3, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
 6:14/size_in_atlas = Vector2i(3, 2)
 6:14/0 = 0
 6:14/0/texture_origin = Vector2i(-16, 8)
-6:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 4, 39, 4, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
+6:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 3, 39, 3, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
 16:9/size_in_atlas = Vector2i(2, 2)
 16:9/0 = 0
 16:9/0/texture_origin = Vector2i(-8, 8)
@@ -1723,15 +1776,15 @@ texture = ExtResource("1_4xfga")
 9:14/size_in_atlas = Vector2i(3, 2)
 9:14/0 = 0
 9:14/0/texture_origin = Vector2i(-16, 8)
-9:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 4, 39, 4, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
+9:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 3, 39, 3, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
 12:14/size_in_atlas = Vector2i(3, 2)
 12:14/0 = 0
 12:14/0/texture_origin = Vector2i(-16, 8)
-12:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 4, 39, 4, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
+12:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 3, 39, 3, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
 15:14/size_in_atlas = Vector2i(3, 2)
 15:14/0 = 0
 15:14/0/texture_origin = Vector2i(-16, 8)
-15:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 4, 39, 4, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
+15:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 3, 39, 3, 39, -7, 37, -15, 34, -20, 29, -24, 3, -24, -2, -20, -5, -15, -7, -7)
 0:16/size_in_atlas = Vector2i(1, 2)
 0:16/0 = 0
 0:16/0/texture_origin = Vector2i(0, 8)
@@ -1754,7 +1807,7 @@ texture = ExtResource("1_4xfga")
 4:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -5, 8, -5, 8, 8)
 14:9/0 = 0
 14:9/0/y_sort_origin = 6
-14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, -5, 8, 0, 8, 2, 6, 3, 8, 6, 8, 8, 6, 8, 2, 3, 0, -5, 2, -8, 2)
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, -5, 8, 3, 8, 6, 8, 8, 6, 8, 2, 0, 0, -7, 1)
 15:9/0 = 0
 15:9/0/y_sort_origin = 6
 15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, 7, 3, 7, 3, 4, -3, 4)
@@ -1778,12 +1831,12 @@ sources/0 = SubResource("TileSetAtlasSource_paxxb")
 size = Vector2(38, 18)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mlgqr"]
-vertices = PackedVector2Array(-44.2969, -108, -20, -108, -20, -93.5391, -106.461, 38, -12.2969, -92, -4, -92, -4, -61.5391, 3.70312, -60, 12, -60, 12, -29.5391, 19.7031, -28, 44, -28, 44, -13.5391, 38.6328, -9, 33, -9, 51.7031, -12, 60, -12, 60, -11, 54, -11, 54, -10, 50.0781, -10, 47.2109, -11.1484, 53.2422, 1, 60, 1, 60, 11, 51, 11, 51.2422, 3, 37.5, 3, 50, 15, 51, 15, -260, -12.2422, -260, -60, -251.703, -60, -244, -61.5391, -244, -76, -235.703, -76, -202.461, 6, -228, -77.5391, -228, -92, -203.703, -92, -196, 15.0391, -122.461, 22, -196, -93.5391, -196, -108, -123.703, -108, -116, 31.0391, -116, -109.539, -116, -124, -52, -124, -52, -109.539, -257.758, -10, -250.461, -10, -244, -0.960938, 50, 22.6406, 44, 31.0391, 2.46094, 38, 44, 35.7578, 41.7578, 38, 33, -3, -100, 47.0391, -4, 47.0391, -4, 51.7578, -6.24219, 54, -97.7578, 54, -100, 51.7578, -113.758, 38, -116, 35.7578, -193.758, 22, -196, 19.7578, -241.758, 6, -244, 3.75781)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(12, 15, 18, 19, 20, 21), PackedInt32Array(12, 21, 13), PackedInt32Array(22, 23, 24, 25, 26), PackedInt32Array(27, 26, 25, 28), PackedInt32Array(25, 29, 28), PackedInt32Array(30, 31, 32), PackedInt32Array(33, 34, 35), PackedInt32Array(36, 37, 38, 39, 40), PackedInt32Array(41, 42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49, 3), PackedInt32Array(50, 30, 32, 33, 51), PackedInt32Array(2, 4, 6, 3), PackedInt32Array(6, 7, 9, 3), PackedInt32Array(51, 33, 35, 37, 36, 52), PackedInt32Array(27, 28, 53, 54, 55), PackedInt32Array(54, 56, 57, 55), PackedInt32Array(3, 58, 27, 55, 59), PackedInt32Array(60, 61, 62, 63), PackedInt32Array(55, 60, 63, 64, 59), PackedInt32Array(10, 14, 58, 3, 9), PackedInt32Array(49, 0, 3), PackedInt32Array(44, 46, 3, 65, 45), PackedInt32Array(65, 66, 45), PackedInt32Array(39, 42, 41, 67, 40), PackedInt32Array(67, 68, 40), PackedInt32Array(52, 36, 69, 70)])
+vertices = PackedVector2Array(-44.5, -106, -22, -106, -22, -91.8984, -105.43, 36, -12.5, -90, -6, -90, -6, -59.8984, 3.5, -58, 10, -58, 10, -27.8984, 19.5, -26, 42, -26, 42, -12.7578, 33.7031, -11.5781, 54.0703, 3, 58, 3, 58, 9, 49, 9, 52.0703, 5, 36.1719, 5, 49, 13, 48, 13, -258, -13.0781, -258, -58, -251.5, -58, -242, -59.8984, -242, -74, -235.5, -74, -201.43, 4, -226, -75.8984, -226, -90, -203.5, -90, -194, 14.3984, -121.43, 20, -194, -91.8984, -194, -106, -123.5, -106, -114, 30.3984, -114, -107.898, -114, -122, -54, -122, -54, -107.898, 30.2969, -4.78125, 1.42969, 36, -6, 46.3984, -96.9219, 52, -98, 50.9219, -98, 46.3984, -256.922, -12, -249.43, -12, 48, 22, 42, 30.3984, -242, -1.60156, 42, 34.9219, 40.9219, 36, -6, 50.9219, -7.07812, 52, -112.922, 36, -114, 34.9219, -192.922, 20, -194, 18.9219, -240.922, 4, -242, 2.92188)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17, 18), PackedInt32Array(19, 18, 17), PackedInt32Array(17, 20, 21, 19), PackedInt32Array(22, 23, 24), PackedInt32Array(25, 26, 27), PackedInt32Array(28, 29, 30, 31, 32), PackedInt32Array(33, 34, 35, 36, 37), PackedInt32Array(38, 39, 40, 41, 3), PackedInt32Array(9, 10, 13, 42, 43, 44, 45, 46, 47), PackedInt32Array(48, 22, 24, 25, 49), PackedInt32Array(2, 4, 6, 3), PackedInt32Array(3, 6, 7, 9, 47), PackedInt32Array(19, 21, 50, 51, 43), PackedInt32Array(49, 25, 27, 29, 28, 52), PackedInt32Array(51, 53, 54, 43), PackedInt32Array(42, 19, 43), PackedInt32Array(44, 55, 56, 45), PackedInt32Array(41, 0, 3), PackedInt32Array(36, 38, 3, 57, 37), PackedInt32Array(57, 58, 37), PackedInt32Array(31, 34, 33, 59, 32), PackedInt32Array(59, 60, 32), PackedInt32Array(52, 28, 61, 62)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-268, -128, 68, -128, 68, 64, -268, 64)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation"
-agent_radius = 3.0
+agent_radius = 5.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -2013,6 +2066,7 @@ offset_left = -143.0
 offset_top = 26.0
 offset_right = -88.0
 offset_bottom = 44.0
+focus_mode = 0
 theme = ExtResource("5_jh32y")
 shortcut = SubResource("Shortcut_n1psn")
 text = "Build"
@@ -2023,6 +2077,7 @@ offset_left = -143.0
 offset_top = 44.0
 offset_right = -88.0
 offset_bottom = 62.0
+focus_mode = 0
 theme = ExtResource("5_jh32y")
 theme_override_colors/font_hover_pressed_color = Color(0.0431373, 0.541176, 0.560784, 1)
 theme_override_colors/font_hover_color = Color(0.117647, 0.737255, 0.45098, 1)
@@ -2041,23 +2096,30 @@ offset_left = -143.0
 offset_top = 62.0
 offset_right = -88.0
 offset_bottom = 80.0
+focus_mode = 0
 theme = ExtResource("5_jh32y")
 theme_override_colors/font_hover_pressed_color = Color(0.564706, 0.368627, 0.662745, 1)
 theme_override_colors/font_hover_color = Color(0.658824, 0.517647, 0.952941, 1)
 theme_override_colors/font_focus_color = Color(0.323831, 0.190172, 0.38946, 1)
 theme_override_colors/font_pressed_color = Color(0.323831, 0.190172, 0.38946, 1)
-theme_override_styles/focus = SubResource("StyleBoxTexture_p7tei")
+theme_override_styles/focus = SubResource("StyleBoxTexture_30iet")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_5u2yt")
 theme_override_styles/hover = SubResource("StyleBoxTexture_n1psn")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_p7tei")
 theme_override_styles/normal = SubResource("StyleBoxTexture_c70he")
+disabled = true
 toggle_mode = true
 shortcut = SubResource("Shortcut_wslke")
 text = "Interact"
 
+[node name="interaction-area" type="Area2D" parent="map/player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/player/interaction-area"]
+shape = SubResource("CircleShape2D_gw3fx")
+
 [node name="TileMap" type="TileMap" parent="map" groups=["navigation"]]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(4, 0)
 tile_set = SubResource("TileSet_gldc4")
 format = 2
 layer_0/name = "water"
@@ -2166,11 +2228,22 @@ offset = Vector2(4, -16)
 region_enabled = true
 region_rect = Rect2(240, 48, 16, 16)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="npc-control" type="Node2D" parent="."]
+script = ExtResource("13_gw3fx")
+
 [connection signal="toggled" from="map/player/build-gui/tent" to="map/player/build-gui" method="_on_tent_toggled"]
 [connection signal="toggled" from="map/player/build-gui/terrain" to="map/player/build-gui" method="_on_terrain_toggled"]
 [connection signal="toggled" from="map/player/build-gui/others" to="map/player/build-gui" method="_on_others_toggled"]
 [connection signal="pressed" from="map/player/build-gui/exit" to="map/player/main-gui" method="_on_build_exit_pressed"]
 [connection signal="pressed" from="map/player/main-gui/build" to="map/player/main-gui" method="_on_build_pressed"]
 [connection signal="pressed" from="map/player/main-gui/manage" to="map/player/main-gui" method="_on_manage_pressed"]
+[connection signal="pressed" from="map/player/main-gui/interact" to="map/player/main-gui" method="_on_interact_pressed"]
+[connection signal="body_entered" from="map/player/interaction-area" to="map/player/main-gui" method="_on_interactionarea_body_entered"]
+[connection signal="body_exited" from="map/player/interaction-area" to="map/player/main-gui" method="_on_interactionarea_body_exited"]
 [connection signal="body_entered" from="map/bridge" to="map/player" method="_on_bridge_entered"]
 [connection signal="body_exited" from="map/bridge" to="map/player" method="_on_bridge_exited"]
+[connection signal="timeout" from="Timer" to="npc-control" method="_on_npcspawn_timer_timeout"]
