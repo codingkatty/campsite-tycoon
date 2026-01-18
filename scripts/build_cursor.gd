@@ -5,6 +5,8 @@ extends Node2D
 @onready var pointer2_h = get_node("2t_horizontal")
 @onready var pointer2_v = get_node("2t_vertical")
 @onready var pointer_big = get_node("nt")
+@onready var light_parent = get_parent().get_node("map/lights")
+@onready var lightNode = preload("res://assets/light.tscn")
 
 var mouse_position
 var tilepos
@@ -28,6 +30,8 @@ var offsets = [
 	Vector2i(-1, 0),
 	Vector2i(-1, 1)
 ]
+
+var light_pos = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -203,7 +207,7 @@ func check_valid_path(tpos, size: Vector2i) -> bool:
 	return true
 
 func build():
-	if is_select_item:
+	if is_select_item and Utils.mode == "build":
 		if crnt_item.is_terrain and check_valid_path(tilepos, crnt_item.size):
 			if crnt_item.is_delete:
 				tilemap.set_cells_terrain_connect(2, [tilepos], 0, -1, false)
@@ -216,12 +220,17 @@ func build():
 
 			if crnt_item.item_type == "tent":
 				no_place.append(find_tent_entrance(tilepos))
-				add_tent_data(find_tent_entrance(tilepos), crnt_item.occupy_max)
+				add_tent_data(crnt_item.name, find_tent_entrance(tilepos), crnt_item.occupy_max)
+
+			if crnt_item.is_light:
+				light_pos.append(tilemap.map_to_local(tilepos) + Vector2(0, 3))
+				generate_lights()
 
 			tilemap.set_cell(3, tilepos, 0, crnt_tile)
 
-func add_tent_data(tpos: Vector2i, occupy_size: int):
+func add_tent_data(name: String, tpos: Vector2i, occupy_size: int):
 	var tent_data = {
+		"name": name + str(Utils.get_tent_index()),
 		"index": Utils.get_tent_index(),
 		"position": tilemap.map_to_local(tpos) + Vector2(0, -8),
 		"max": occupy_size,
@@ -234,3 +243,12 @@ func add_tent_data(tpos: Vector2i, occupy_size: int):
 func find_tent_entrance(tpos: Vector2i) -> Vector2i:
 	var entrance = tpos + Vector2i(1, 1)
 	return entrance
+
+func generate_lights() -> void:
+	for light in light_parent.get_children():
+		light.queue_free()
+	
+	for pos in light_pos:
+		var new_light = lightNode.instantiate()
+		new_light.position = pos
+		light_parent.add_child(new_light)

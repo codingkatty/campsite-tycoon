@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var agent = $NavigationAgent2D
 @onready var sprite = $AnimatedSprite2D
+@onready var timer = $Timer
 var SPEED =  20
 var targ: Vector2
 var place_in_queue = 0
@@ -42,7 +43,9 @@ func _process(delta):
 		elif direction.y > 0:
 			play_anim("front_walk")
 	else:
-		play_anim("idle")
+		if timer.is_stopped():
+			timer.start(1)
+		play_anim("back_idle")
 		sprite.flip_h = false
 
 func updateTargetPosition(target):
@@ -52,3 +55,7 @@ func updateTargetPosition(target):
 func play_anim(anim):
 	if sprite.animation != anim:
 		sprite.play(anim)
+
+func _on_timer_timeout() -> void:
+	visible = false
+	$CollisionShape2D.disabled = true

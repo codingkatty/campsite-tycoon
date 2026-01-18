@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var npc_node = preload("res://assets/npc.tscn")
+@onready var main_gui = get_parent().get_node("map/player/main-gui")
 
 var npc_queue = []
 
@@ -27,6 +28,7 @@ func _on_npcspawn_timer_timeout() -> void:
 				npc.position = Vector2(79, -2)
 				npc.place_in_queue = 2
 			get_parent().get_node("map").add_child(npc)
+			main_gui.new_npc()
 			npc_queue.append(npc)
 			break
 

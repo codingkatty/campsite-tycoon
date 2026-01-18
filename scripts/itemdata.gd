@@ -16,3 +16,6 @@ class_name ItemData extends Resource
 # delete
 @export var is_delete: bool = false
 @export var target_layer: int = 2
+
+# light
+@export var is_light: bool = false

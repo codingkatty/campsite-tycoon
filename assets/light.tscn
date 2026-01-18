@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://brc414sragcj8"]
+
+[ext_resource type="Texture2D" uid="uid://de5chxqf7guix" path="res://assets/tilemap/light.png" id="1_lj55l"]
+[ext_resource type="Script" uid="uid://bxxc77chaaupw" path="res://scripts/light_anim.gd" id="2_uex0r"]
+
+[sub_resource type="Gradient" id="Gradient_n1psn"]
+offsets = PackedFloat32Array(0.00735294, 0.772059)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w367w"]
+gradient = SubResource("Gradient_n1psn")
+fill = 1
+fill_from = Vector2(0.517094, 0.491453)
+
+[sub_resource type="Animation" id="Animation_uex0r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("light:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+
+[sub_resource type="Animation" id="Animation_d3pl2"]
+resource_name = "turn_off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("light:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 0.5]
+}
+
+[sub_resource type="Animation" id="Animation_lj55l"]
+resource_name = "turn_on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("light:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 4.92458),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 3.73213),
+"update": 0,
+"values": [0.5, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d3pl2"]
+_data = {
+&"RESET": SubResource("Animation_uex0r"),
+&"turn_off": SubResource("Animation_d3pl2"),
+&"turn_on": SubResource("Animation_lj55l")
+}
+
+[node name="light" type="PointLight2D"]
+color = Color(1, 0.608874, 0.246116, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_w367w")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.0901961, 0.0941176, 0.419608, 0.588235)
+energy = 0.5
+blend_mode = 1
+texture = SubResource("GradientTexture2D_w367w")
+height = 6.0
+
+[node name="light" type="PointLight2D" parent="."]
+color = Color(1, 0.454104, 0.265862, 1)
+energy = 0.0
+texture = ExtResource("1_lj55l")
+height = 6.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d3pl2")
+}
+script = ExtResource("2_uex0r")

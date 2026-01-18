@@ -1,8 +1,24 @@
-[gd_scene load_steps=34 format=3 uid="uid://scj5te2e63st"]
+[gd_scene load_steps=38 format=3 uid="uid://scj5te2e63st"]
 
 [ext_resource type="Script" uid="uid://daqm6q5ntxtwe" path="res://scripts/npc.gd" id="1_p88f2"]
 [ext_resource type="Texture2D" uid="uid://b7a72lwcnhjom" path="res://assets/player/shadow.png" id="1_xhifn"]
 [ext_resource type="Texture2D" uid="uid://dqv505vba7m30" path="res://assets/npcs/base.png" id="2_jwehy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p88f2"]
+atlas = ExtResource("2_jwehy")
+region = Rect2(144, 26, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viux6"]
+atlas = ExtResource("2_jwehy")
+region = Rect2(162, 26, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6acs"]
+atlas = ExtResource("2_jwehy")
+region = Rect2(180, 26, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e043s"]
+atlas = ExtResource("2_jwehy")
+region = Rect2(198, 26, 18, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p8gyt"]
 atlas = ExtResource("2_jwehy")
@@ -118,6 +134,23 @@ region = Rect2(126, 52, 18, 26)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vnu3w"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p88f2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_viux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6acs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e043s")
+}],
+"loop": true,
+"name": &"back_idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p8gyt")
@@ -240,7 +273,7 @@ texture = ExtResource("1_xhifn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vnu3w")
-animation = &"idle"
+animation = &"back_idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -251,3 +284,6 @@ shape = SubResource("CapsuleShape2D_7hlum")
 path_desired_distance = 30.0
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
