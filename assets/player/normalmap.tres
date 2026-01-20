@@ -1,0 +1,14 @@
+[gd_resource type="CanvasTexture" load_steps=5 format=3 uid="uid://b2c8weybc4cr2"]
+
+[ext_resource type="Texture2D" uid="uid://b6i8faf64behm" path="res://assets/player/player.png" id="1_fcumn"]
+[ext_resource type="Texture2D" uid="uid://bag8jq7s1lpst" path="res://assets/player/player-normalmap.png" id="2_rmthj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30iet"]
+atlas = ExtResource("1_fcumn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkblt"]
+atlas = ExtResource("2_rmthj")
+
+[resource]
+diffuse_texture = SubResource("AtlasTexture_30iet")
+normal_texture = SubResource("AtlasTexture_mkblt")

@@ -102,7 +102,6 @@ _data = {
 
 [node name="light" type="PointLight2D"]
 color = Color(1, 0.608874, 0.246116, 1)
-energy = 1.5
 texture = SubResource("GradientTexture2D_w367w")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -116,7 +115,7 @@ height = 6.0
 color = Color(1, 0.454104, 0.265862, 1)
 energy = 0.0
 texture = ExtResource("1_lj55l")
-height = 6.0
+height = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

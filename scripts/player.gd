@@ -10,25 +10,20 @@ func _physics_process(delta):
 	if Input.is_action_pressed("up"):
 		input_vector.y -= 1
 		play_anim("back_walk")
-		sprite.flip_h = false
 	elif Input.is_action_pressed("down"):
 		input_vector.y += 1
 		play_anim("front_walk")
-		sprite.flip_h = false
 	elif Input.is_action_pressed("left"):
 		input_vector.x -= 1
-		play_anim("side_walk")
-		sprite.flip_h = true
+		play_anim("left_walk")
 	elif Input.is_action_pressed("right"):
 		input_vector.x += 1
-		play_anim("side_walk")
-		sprite.flip_h = false
+		play_anim("right_walk")
 
 	velocity = input_vector.normalized() * speed
 
 	if velocity == Vector2.ZERO:
 		play_anim("idle")
-		sprite.flip_h = false
 	
 	move_and_slide()
 

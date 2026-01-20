@@ -229,13 +229,16 @@ func build():
 			tilemap.set_cell(3, tilepos, 0, crnt_tile)
 
 func add_tent_data(name: String, tpos: Vector2i, occupy_size: int):
+	var tent_i = Utils.get_tent_index()
 	var tent_data = {
-		"name": name + str(Utils.get_tent_index()),
-		"index": Utils.get_tent_index(),
+		"name": name + " " + str(tent_i),
+		"index": tent_i,
 		"position": tilemap.map_to_local(tpos) + Vector2(0, -8),
 		"max": occupy_size,
 		"occupied": false,
-		"occupants": []
+		"occupants": [],
+		"icon_atlas_x": crnt_item.atlas_x,
+		"price": 0
 	}
 
 	Utils.tent_data.append(tent_data)

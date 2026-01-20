@@ -7,6 +7,7 @@ extends Control
 @onready var navigation_region = get_tree().get_root().get_node("Node2D/map/NavigationRegion2D")
 @onready var light_parent = get_tree().get_root().get_node("Node2D/map/lights")
 @onready var lightNode = preload("res://assets/light.tscn")
+@onready var manage_gui = get_parent().get_node("manage-gui")
 
 var interact_action = ""
 var interact_npc
@@ -26,7 +27,10 @@ func _on_build_pressed() -> void:
 	Utils.mode = "build"
 
 func _on_manage_pressed() -> void:
-	pass # Replace with function body.
+	visible = false
+	manage_gui.visible = true
+	manage_gui.generate_tent_infos()
+	Utils.mode = "manage"
 
 func _on_build_exit_pressed() -> void:
 	visible = true
@@ -61,3 +65,8 @@ func _on_interactionarea_area_exited(area: Area2D) -> void:
 func new_npc():
 	if interact_action == "npc":
 		interactbtn.disabled = false
+
+func _on_manage_exit_pressed() -> void:
+	visible = true
+	manage_gui.visible = false
+	Utils.mode = "main"
