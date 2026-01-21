@@ -2,6 +2,7 @@ extends Node
 
 signal item_selected(data)
 signal reset_crnt()
+signal tent_selected(tent_index)
 
 # modes: main, build, manage
 var mode = "main"

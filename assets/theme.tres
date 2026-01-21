@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://b32ioaa2prmvr"]
+[gd_resource type="Theme" load_steps=22 format=3 uid="uid://b32ioaa2prmvr"]
 
 [ext_resource type="FontFile" uid="uid://cla4bxvj7ex5x" path="res://assets/gui/edit-undo.brk.ttf" id="1_lu33j"]
 [ext_resource type="Texture2D" uid="uid://c180pxkn1w3gt" path="res://assets/gui/box.png" id="1_wl1kw"]
+[ext_resource type="Texture2D" uid="uid://kedeq8oq5cqr" path="res://assets/gui/v-scrollbar.png" id="3_lu33j"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lu33j"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
@@ -68,6 +69,23 @@ region_rect = Rect2(0, 0, 16, 4)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y61vb"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2pqw"]
+bg_color = Color(0.728452, 0.890768, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8htd"]
+bg_color = Color(0.923596, 0.968473, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wms38"]
+bg_color = Color(0.472934, 0.712602, 0.955106, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcf2e"]
+texture = ExtResource("3_lu33j")
+texture_margin_left = 2.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(0, 0, 4, 16)
+
 [resource]
 Button/colors/font_color = Color(0.0481381, 0.215646, 0.36382, 1)
 Button/colors/font_focus_color = Color(0.126457, 0.40116, 0.646708, 1)
@@ -85,3 +103,7 @@ HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_lu33j")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_wycmq")
 HScrollBar/styles/scroll = SubResource("StyleBoxTexture_wms38")
 Panel/styles/panel = SubResource("StyleBoxFlat_y61vb")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_x2pqw")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_e8htd")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_wms38")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_bcf2e")

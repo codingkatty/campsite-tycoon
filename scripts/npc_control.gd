@@ -57,6 +57,30 @@ func npc_leave(tent_index):
 		npc_queue[0].place_in_queue = 1
 		npc_queue[0].moving_to_first = true
 
+func npc_denied():
+	print("npc denied que")
+	npc_queue[0].queue_free()
+	npc_queue.pop_front()
+
+	if npc_queue.size() > 0:
+		npc_queue[0].place_in_queue = 1
+		npc_queue[0].moving_to_first = true
+
+func get_unoccupied_tent_list():
+	var unoccupied_tents = []
+	#print("tent data" + str(Utils.tent_data))
+	for tent in Utils.tent_data:
+		if not tent.occupied:
+			unoccupied_tents.append(tent)
+	#print(unoccupied_tents)
+	return unoccupied_tents
+
+func get_tent_position(tent_index) -> Vector2:
+	for tent in Utils.tent_data:
+		if tent.index == tent_index:
+			return tent.position
+	return Vector2.ZERO
+
 #test only
 func first_unoccupied_tent_pos():
 	var tent_data = Utils.tent_data

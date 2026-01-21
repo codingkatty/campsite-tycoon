@@ -8,6 +8,7 @@ extends Control
 @onready var light_parent = get_tree().get_root().get_node("Node2D/map/lights")
 @onready var lightNode = preload("res://assets/light.tscn")
 @onready var manage_gui = get_parent().get_node("manage-gui")
+@onready var npc_gui = get_parent().get_node("npc-gui")
 
 var interact_action = ""
 var interact_npc
@@ -42,10 +43,16 @@ func _on_build_exit_pressed() -> void:
 func _on_interact_pressed() -> void:
 	if interact_action == "npc":
 		Utils.mode = "interact"
-		interact_npc = npc_control.npc_queue[0]
-		var test_pos = npc_control.first_unoccupied_tent_pos()
-		npc_control.npc_leave(npc_control.first_unoccupied_tent_index())
-		interact_npc.updateTargetPosition(test_pos)
+
+		if npc_control.npc_queue.size() > 0:
+			visible = false
+			npc_gui.visible = true
+			npc_gui.load_tent_list()
+
+		#interact_npc = npc_control.npc_queue[0]
+		#var test_pos = npc_control.first_unoccupied_tent_pos()
+		#npc_control.npc_leave(npc_control.first_unoccupied_tent_index())
+		#interact_npc.updateTargetPosition(test_pos)
 
 		if npc_control.npc_queue.size() == 0:
 			interactbtn.disabled = true
