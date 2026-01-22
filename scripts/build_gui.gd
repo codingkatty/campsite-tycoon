@@ -30,6 +30,7 @@ func load_items(itemd, type):
 			item_instance.atlas_x = data.atlas_x
 			item_instance.atlas_y = at_y
 			item_instance.get_node("TextureButton").button_group = button_group
+			item_instance.price = data.price
 
 			item_container.add_child(item_instance)
 	
@@ -39,10 +40,6 @@ func load_items(itemd, type):
 func delete_items():
 	for item in item_container.get_children():
 		item.queue_free()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func set_scrollbar(r_rect: Rect2, c_grabber, c_highlight, c_pressed) -> void:
 	var h_scrollbar = scroll.get_h_scroll_bar()

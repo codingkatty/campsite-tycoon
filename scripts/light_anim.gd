@@ -5,8 +5,3 @@ extends AnimationPlayer
 func _ready() -> void:
 	if Utils.crnt_day == "night":
 		play("turn_on")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

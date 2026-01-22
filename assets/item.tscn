@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkq47f6uio7k5"]
+[gd_scene load_steps=10 format=3 uid="uid://dkq47f6uio7k5"]
 
 [ext_resource type="Script" uid="uid://r38wrysoo430" path="res://scripts/item.gd" id="1_25fd1"]
+[ext_resource type="FontFile" uid="uid://b6hyryx7qhk2l" path="res://assets/gui/MedodicaRegular.otf" id="2_25fd1"]
+[ext_resource type="Texture2D" uid="uid://b60hvi2eanju7" path="res://assets/gui/coin-small.png" id="3_wvlm7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_25fd1"]
 load_path = "res://.godot/imported/itembox.png-046b75decb5efad25882bbe4ddecf741.ctex"
@@ -47,5 +49,26 @@ offset_right = 16.0
 offset_bottom = 19.0
 mouse_filter = 2
 texture = SubResource("AtlasTexture_25fd1")
+
+[node name="price" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 19.0
+offset_right = 19.0
+offset_bottom = 27.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_25fd1")
+theme_override_font_sizes/normal_font_size = 8
+text = "20"
+fit_content = true
+scroll_active = false
+
+[node name="coin" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 21.0
+offset_right = 6.0
+offset_bottom = 25.0
+texture = ExtResource("3_wvlm7")
 
 [connection signal="toggled" from="TextureButton" to="." method="_on_button_toggled"]

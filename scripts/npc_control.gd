@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var npc_textures: Array[Texture2D]
 @onready var npc_node = preload("res://assets/npc.tscn")
 @onready var main_gui = get_parent().get_node("map/player/main-gui")
 
@@ -8,10 +9,6 @@ var npc_queue = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _on_npcspawn_timer_timeout() -> void:
 	if not npc_queue.size() < 2:
@@ -27,6 +24,7 @@ func _on_npcspawn_timer_timeout() -> void:
 			elif npc_queue.size() == 1:
 				npc.position = Vector2(79, -2)
 				npc.place_in_queue = 2
+			npc.texture = npc_textures[randi() % npc_textures.size()]
 			get_parent().get_node("map").add_child(npc)
 			main_gui.new_npc()
 			npc_queue.append(npc)
@@ -80,6 +78,12 @@ func get_tent_position(tent_index) -> Vector2:
 		if tent.index == tent_index:
 			return tent.position
 	return Vector2.ZERO
+
+func set_tent_price(tent_index, price) -> void:
+	for tent in Utils.tent_data:
+		if tent.index == tent_index:
+			tent.price = price
+			return
 
 #test only
 func first_unoccupied_tent_pos():

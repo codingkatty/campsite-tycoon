@@ -8,8 +8,20 @@ var targ: Vector2
 var place_in_queue = 0
 var moving_to_first = false
 
+var char_name: String
+var desc: String
+var desc_info = ["job", "origin", "story"]
+
+var price: int
+var texture: Texture2D
+
 func _ready():
-	pass
+	char_name = Utils.random_name()
+	desc_info = Utils.generate_story()
+	desc = char_name + " is a " + desc_info[0] + " that came from " + desc_info[1] + ". " + desc_info[2] + "."
+	price = randi() % 8 + 2
+	change_spritesheet(texture)
+	sprite.play("idle")
 
 func _process(delta):
 	if position.distance_to(Vector2(59, -2)) < 0.5:
@@ -59,3 +71,11 @@ func play_anim(anim):
 func _on_timer_timeout() -> void:
 	visible = false
 	$CollisionShape2D.disabled = true
+
+func change_spritesheet(new_sheet: Texture2D):
+	sprite.sprite_frames = sprite.sprite_frames.duplicate()
+
+	for anim in sprite.sprite_frames.get_animation_names():
+		for i in range(sprite.sprite_frames.get_frame_count(anim)):
+			var frame_tex = sprite.sprite_frames.get_frame_texture(anim, i)
+			frame_tex.atlas = new_sheet

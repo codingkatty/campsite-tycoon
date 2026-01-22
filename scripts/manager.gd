@@ -12,7 +12,7 @@ func refresh():
 	$pic.texture = $pic.texture.duplicate()
 	$pic.texture.region = Rect2(tent_data.icon_atlas_x, 0, 20, 28)
 
-	$price.get_node("text").text = "$" +str(tent_data.price)
+	$price.get_node("text").text = "$" + str(tent_data.price)
 
 	var is_occupied = tent_data.occupied
 	$occupied.texture = $occupied.texture.duplicate()
@@ -21,7 +21,3 @@ func refresh():
 		$occupied.texture.region = Rect2(43, 0, 43, 10)
 	else:
 		$occupied.texture.region = Rect2(0, 0, 43, 10)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

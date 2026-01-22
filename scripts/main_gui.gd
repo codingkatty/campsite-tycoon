@@ -17,10 +17,6 @@ var interact_npc
 func _ready() -> void:
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_build_pressed() -> void:
 	visible = false
 	build_gui.visible = true
@@ -30,6 +26,8 @@ func _on_build_pressed() -> void:
 func _on_manage_pressed() -> void:
 	visible = false
 	manage_gui.visible = true
+	manage_gui.info_button.button_pressed = true
+	manage_gui.info_tab.visible = true
 	manage_gui.generate_tent_infos()
 	Utils.mode = "manage"
 

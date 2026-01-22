@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var tilemap = get_parent().get_node("TileMap")
 @onready var sprite = get_node("AnimatedSprite2D")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var input_vector = Vector2.ZERO
 
 	if Input.is_action_pressed("up"):

@@ -55,7 +55,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			crnt_pointer.position = tilepos * 16
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	mouse_position = get_global_mouse_position()
 	tilepos = tilemap.local_to_map(mouse_position)
 
@@ -207,7 +207,7 @@ func check_valid_path(tpos, size: Vector2i) -> bool:
 	return true
 
 func build():
-	if is_select_item and Utils.mode == "build":
+	if is_select_item and Utils.mode == "build" and Utils.coins >= crnt_item.price:
 		if crnt_item.is_terrain and check_valid_path(tilepos, crnt_item.size):
 			if crnt_item.is_delete:
 				tilemap.set_cells_terrain_connect(2, [tilepos], 0, -1, false)
@@ -228,10 +228,13 @@ func build():
 
 			tilemap.set_cell(3, tilepos, 0, crnt_tile)
 
-func add_tent_data(name: String, tpos: Vector2i, occupy_size: int):
+		Utils.coins -= crnt_item.price
+		%coin.refresh_coins(["-" + str(crnt_item.price)])
+
+func add_tent_data(tname: String, tpos: Vector2i, occupy_size: int):
 	var tent_i = Utils.get_tent_index()
 	var tent_data = {
-		"name": name + " " + str(tent_i),
+		"name": tname + " " + str(tent_i),
 		"index": tent_i,
 		"position": tilemap.map_to_local(tpos) + Vector2(0, -8),
 		"max": occupy_size,

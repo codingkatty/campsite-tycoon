@@ -7,16 +7,13 @@ extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_daycycle_timeout() -> void:
 	if Utils.crnt_day == "day":
 		Utils.crnt_day = "night"
 		overlay_anim.play("to_night")
 		turn_lights_on()
 	else:
+		Utils.payout.emit()
 		Utils.crnt_day = "day"
 		overlay_anim.play("to_day")
 		turn_lights_off()
