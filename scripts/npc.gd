@@ -78,4 +78,7 @@ func change_spritesheet(new_sheet: Texture2D):
 	for anim in sprite.sprite_frames.get_animation_names():
 		for i in range(sprite.sprite_frames.get_frame_count(anim)):
 			var frame_tex = sprite.sprite_frames.get_frame_texture(anim, i)
-			frame_tex.atlas = new_sheet
+			var new_atlas = AtlasTexture.new()
+			new_atlas.atlas = new_sheet
+			new_atlas.region = frame_tex.region
+			sprite.sprite_frames.set_frame(anim, i, new_atlas)

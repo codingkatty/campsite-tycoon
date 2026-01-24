@@ -20,6 +20,8 @@ var jobs = ["doctor", "scientist", "lawyer", "artist", "programmer", "athelete",
 var origin = ["Sunland", "Funnicity", "Mystic Falls", "Rangoat", "Fungus Land", "the Mainland", "Tinland", "Mars", "Atlantis", "Karthumis", "MolXity", "Quandora", "Lunar Mountains"]
 var story = ["They ran away from their home and ran to the nearest gas station. It exploded as well but they ran and sailed to this island", "They escaped from their workplace and hopped on the nearest boat, ending up here", "Their city was destroyed by the meteor and they swam here, apparently", "There was a scary looking creature that offered them a kayak. They came here, somehow", "They went to the nearest convenience store, stole a boat, and came to this island", "They ate only beans for 3 days and somehow sailed to this island", "Their manager fired them right before the meteor came, and right as the meteor knocked down the building, they came out of it unharmed", "They somehow found the cure for cancer but the meteor took it", "They saw an alien and knocked it out It let out a scary scream and they ran away here", "They have been on a cruise. Said cruise was destroyed and they floated here", "They held on to their room door as the tsunami brought them here"]
 
+var bg_sound = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Utils.payout.connect(pay_coins)
@@ -29,7 +31,8 @@ func pay_coins() -> void:
 	var list_coins: Array = []
 	for tent in tent_data:
 		tent_coins += tent.price
-		list_coins.append("+" + str(tent.price))
+		if tent.price != 0:
+			list_coins.append("+" + str(tent.price))
 
 	coins += tent_coins
 	emit_signal("update_coins", list_coins)

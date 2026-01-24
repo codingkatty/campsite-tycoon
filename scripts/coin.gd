@@ -12,10 +12,10 @@ func refresh_coins(list_coins = []) -> void:
 	if get_node("%coin") != null:
 		for i in list_coins:
 			get_node("%coin").spawn_coin_effect(i)
-			#await $Timer.start(0.05).timeout
+			await get_tree().create_timer(0.05).timeout
 
 func spawn_coin_effect(effect_text) -> void:
 	var new_effect = effect.instantiate()
-	new_effect.position += Vector2(randi_range(-20, 20), randi_range(-10, 10))
+	new_effect.position += Vector2(randi_range(-10, 10), randi_range(-10, 10))
 	new_effect.get_node("text").text = effect_text
 	parent_container.add_child(new_effect)

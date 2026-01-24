@@ -1,0 +1,264 @@
+[gd_scene load_steps=19 format=3 uid="uid://dpv7h450infoe"]
+
+[ext_resource type="VideoStream" uid="uid://nsi2f6xsieq4" path="res://assets/player/output.ogv" id="1_ioskq"]
+[ext_resource type="Script" uid="uid://cymvf3exmagha" path="res://scripts/intro.gd" id="1_xwriy"]
+[ext_resource type="FontFile" uid="uid://cla4bxvj7ex5x" path="res://assets/gui/edit-undo.brk.ttf" id="1_yjqpq"]
+[ext_resource type="FontFile" uid="uid://b6hyryx7qhk2l" path="res://assets/gui/MedodicaRegular.otf" id="2_4bx60"]
+[ext_resource type="Texture2D" uid="uid://dn48b1qq0ucv5" path="res://assets/gui/tutorial/build.png" id="3_i2l1n"]
+[ext_resource type="Texture2D" uid="uid://cjssip1bsdcvp" path="res://assets/gui/tutorial/coins.png" id="4_n6p8m"]
+[ext_resource type="Texture2D" uid="uid://dj6c7sgue4dxu" path="res://assets/gui/tutorial/control.png" id="5_m3r7s"]
+[ext_resource type="Texture2D" uid="uid://n3qymemdc3ap" path="res://assets/gui/tutorial/customer.png" id="6_xwriy"]
+[ext_resource type="Texture2D" uid="uid://dylqjbh1a4313" path="res://assets/gui/tutorial/npc ui.png" id="7_u5myo"]
+[ext_resource type="Texture2D" uid="uid://cj5wfqrh5opgp" path="res://assets/gui/tutorial/place.png" id="8_u05oh"]
+[ext_resource type="Texture2D" uid="uid://dwbtus1cy77dn" path="res://assets/gui/tutorial/placed.png" id="9_epycs"]
+[ext_resource type="Texture2D" uid="uid://dbr5hoeqdjulo" path="res://assets/gui/tutorial/player.png" id="10_ge50m"]
+[ext_resource type="Texture2D" uid="uid://b73xd78faswwh" path="res://assets/gui/tutorial/reception.png" id="11_17bgi"]
+[ext_resource type="Theme" uid="uid://b32ioaa2prmvr" path="res://assets/theme.tres" id="12_m3r7s"]
+
+[sub_resource type="Animation" id="Animation_g3eks"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(288, 162)]
+}
+
+[sub_resource type="Animation" id="Animation_4ytvr"]
+resource_name = "slide_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 4.5948),
+"update": 0,
+"values": [Vector2(1152, 648), Vector2(0, 648)]
+}
+
+[sub_resource type="Animation" id="Animation_v86rl"]
+resource_name = "slide_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 3.86374),
+"update": 0,
+"values": [Vector2(0, 648), Vector2(1152, 648)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_13sgg"]
+_data = {
+&"RESET": SubResource("Animation_g3eks"),
+&"slide_in": SubResource("Animation_4ytvr"),
+&"slide_out": SubResource("Animation_v86rl")
+}
+
+[node name="intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xwriy")
+
+[node name="tutorial" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="tutorial"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="title" type="RichTextLabel" parent="tutorial"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 21.0
+offset_right = 616.0
+offset_bottom = 96.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_yjqpq")
+theme_override_font_sizes/normal_font_size = 64
+text = "simple tutorial"
+
+[node name="info1" type="RichTextLabel" parent="tutorial"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 368.0
+offset_bottom = 287.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_4bx60")
+theme_override_font_sizes/normal_font_size = 36
+text = "wasd to move"
+
+[node name="info2" type="RichTextLabel" parent="tutorial"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 21.0
+offset_right = 1128.0
+offset_bottom = 212.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_4bx60")
+theme_override_font_sizes/normal_font_size = 36
+text = "i will make a better one someday trust ;-;"
+
+[node name="Build" type="Sprite2D" parent="tutorial"]
+position = Vector2(259, 500)
+scale = Vector2(0.475309, 0.475309)
+texture = ExtResource("3_i2l1n")
+
+[node name="Coins" type="Sprite2D" parent="tutorial"]
+position = Vector2(368, 150)
+scale = Vector2(0.485915, 0.485915)
+texture = ExtResource("4_n6p8m")
+
+[node name="info3" type="RichTextLabel" parent="tutorial"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 162.0
+offset_right = 554.0
+offset_bottom = 353.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_4bx60")
+theme_override_font_sizes/normal_font_size = 36
+text = "^^ coins, you get payout once it turns day"
+
+[node name="info4" type="RichTextLabel" parent="tutorial"]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 215.0
+offset_right = 866.0
+offset_bottom = 406.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_4bx60")
+theme_override_font_sizes/normal_font_size = 36
+text = "the stump thing is reception. interact with it."
+
+[node name="info5" type="RichTextLabel" parent="tutorial"]
+layout_mode = 0
+offset_left = 878.75
+offset_top = 65.0
+offset_right = 1136.75
+offset_bottom = 256.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_4bx60")
+theme_override_font_sizes/normal_font_size = 36
+text = "decline or accept"
+
+[node name="info6" type="RichTextLabel" parent="tutorial"]
+layout_mode = 0
+offset_left = 902.75
+offset_top = 361.0
+offset_right = 1160.75
+offset_bottom = 552.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_4bx60")
+theme_override_font_sizes/normal_font_size = 36
+text = "select tent ^"
+
+[node name="Control" type="Sprite2D" parent="tutorial"]
+position = Vector2(132, 237)
+scale = Vector2(0.582353, 0.582353)
+texture = ExtResource("5_m3r7s")
+
+[node name="Customer" type="Sprite2D" parent="tutorial"]
+position = Vector2(754, 162)
+scale = Vector2(0.395131, 0.395131)
+texture = ExtResource("6_xwriy")
+
+[node name="NpcUi" type="Sprite2D" parent="tutorial"]
+position = Vector2(980.75, 227)
+scale = Vector2(0.407638, 0.407638)
+texture = ExtResource("7_u5myo")
+
+[node name="Place" type="Sprite2D" parent="tutorial"]
+position = Vector2(337, 446)
+scale = Vector2(0.548689, 0.548689)
+texture = ExtResource("8_u05oh")
+
+[node name="Placed" type="Sprite2D" parent="tutorial"]
+position = Vector2(519, 527)
+scale = Vector2(0.604869, 0.604869)
+texture = ExtResource("9_epycs")
+
+[node name="info7" type="RichTextLabel" parent="tutorial"]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 373.0
+offset_right = 790.0
+offset_bottom = 564.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_4bx60")
+theme_override_font_sizes/normal_font_size = 36
+text = "build ui: select and click to place. tent brings +1 customer"
+
+[node name="Player" type="Sprite2D" parent="tutorial"]
+position = Vector2(519, 324)
+scale = Vector2(0.464912, 0.464912)
+texture = ExtResource("10_ge50m")
+
+[node name="Reception" type="Sprite2D" parent="tutorial"]
+position = Vector2(608, 138)
+scale = Vector2(0.522059, 0.522059)
+texture = ExtResource("11_17bgi")
+
+[node name="playfr" type="Button" parent="tutorial"]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 503.0
+offset_right = 934.0
+offset_bottom = 521.0
+scale = Vector2(4.08, 4.08)
+focus_mode = 0
+theme = ExtResource("12_m3r7s")
+text = "okayy??!?"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+stream = ExtResource("1_ioskq")
+autoplay = true
+expand = true
+
+[node name="transition" type="Control" parent="."]
+z_index = 2000
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="transitions" type="AnimationPlayer" parent="transition"]
+libraries = {
+&"": SubResource("AnimationLibrary_13sgg")
+}
+autoplay = "slide_in"
+
+[connection signal="pressed" from="tutorial/playfr" to="." method="_on_playfr_pressed"]
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="animation_finished" from="transition/transitions" to="." method="_on_transitions_animation_finished"]

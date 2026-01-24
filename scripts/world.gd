@@ -5,7 +5,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if Utils.bg_sound:
+		AudioPlayer.play_music_bg()
 
 func _on_daycycle_timeout() -> void:
 	if Utils.crnt_day == "day":

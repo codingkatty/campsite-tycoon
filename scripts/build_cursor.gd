@@ -229,7 +229,10 @@ func build():
 			tilemap.set_cell(3, tilepos, 0, crnt_tile)
 
 		Utils.coins -= crnt_item.price
-		%coin.refresh_coins(["-" + str(crnt_item.price)])
+		if crnt_item.price > 0:
+			%coin.refresh_coins(["-" + str(crnt_item.price)])
+
+		$sfx.play()
 
 func add_tent_data(tname: String, tpos: Vector2i, occupy_size: int):
 	var tent_i = Utils.get_tent_index()

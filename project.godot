@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="campire"
-run/main_scene="uid://b676xmxuyfpsu"
+run/main_scene="uid://b0ojacccrk2ni"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Utils="*res://scenes/utils.tscn"
+AudioPlayer="*res://scenes/audio_player.tscn"
 
 [display]
 
