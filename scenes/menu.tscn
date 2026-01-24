@@ -297,12 +297,12 @@ height = 12.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gw3fx"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n1psn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_70i5f"]
 atlas = SubResource("CompressedTexture2D_gw3fx")
 region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c00ee"]
-texture = SubResource("AtlasTexture_n1psn")
+texture = SubResource("AtlasTexture_70i5f")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -311,12 +311,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mlgqr"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c00ee"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj5lg"]
 atlas = SubResource("CompressedTexture2D_mlgqr")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw3fx"]
-texture = SubResource("AtlasTexture_c00ee")
+texture = SubResource("AtlasTexture_mj5lg")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -325,12 +325,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_blm8a"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7tei"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufwb2"]
 atlas = SubResource("CompressedTexture2D_blm8a")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wslke"]
-texture = SubResource("AtlasTexture_p7tei")
+texture = SubResource("AtlasTexture_ufwb2")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -339,12 +339,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sq6bu"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5u2yt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cdou"]
 atlas = SubResource("CompressedTexture2D_sq6bu")
 region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30iet"]
-texture = SubResource("AtlasTexture_5u2yt")
+texture = SubResource("AtlasTexture_6cdou")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -353,12 +353,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m335s"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y2ir2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_i42df"]
 atlas = SubResource("CompressedTexture2D_m335s")
 region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5u2yt"]
-texture = SubResource("AtlasTexture_y2ir2")
+texture = SubResource("AtlasTexture_i42df")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -367,12 +367,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wslke"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mo32q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jp70"]
 atlas = SubResource("CompressedTexture2D_wslke")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1psn"]
-texture = SubResource("AtlasTexture_mo32q")
+texture = SubResource("AtlasTexture_7jp70")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -381,12 +381,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n1psn"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c70he"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxgkd"]
 atlas = SubResource("CompressedTexture2D_n1psn")
 region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7tei"]
-texture = SubResource("AtlasTexture_c70he")
+texture = SubResource("AtlasTexture_mxgkd")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -395,12 +395,12 @@ texture_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c00ee"]
 load_path = "res://.godot/imported/box.png-3730a5bb67a493010bb832b930a573b0.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6k6j1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6gyw"]
 atlas = SubResource("CompressedTexture2D_c00ee")
 region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c70he"]
-texture = SubResource("AtlasTexture_6k6j1")
+texture = SubResource("AtlasTexture_g6gyw")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0

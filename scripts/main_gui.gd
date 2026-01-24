@@ -9,13 +9,16 @@ extends Control
 @onready var lightNode = preload("res://assets/light.tscn")
 @onready var manage_gui = get_parent().get_node("manage-gui")
 @onready var npc_gui = get_parent().get_node("npc-gui")
+@onready var pause_gui = get_parent().get_node("pause-gui")
 
 var interact_action = ""
 var interact_npc
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause") and Utils.mode == "main":
+		visible = false
+		pause_gui.visible = true
+		Utils.mode = "pause"
 
 func _on_build_pressed() -> void:
 	visible = false
@@ -74,4 +77,9 @@ func new_npc():
 func _on_manage_exit_pressed() -> void:
 	visible = true
 	manage_gui.visible = false
+	Utils.mode = "main"
+
+func _on_back_pressed() -> void:
+	visible = true
+	pause_gui.visible = false
 	Utils.mode = "main"
